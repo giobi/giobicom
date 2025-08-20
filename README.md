@@ -1,2 +1,18 @@
-# giobicom25
-Professional website for giobi.com
+[Nome Agenzia] - Sito Web UfficialeBenvenuti nel repository del sito web ufficiale di [Nome Agenzia]. Questo sito è stato sviluppato per presentare i nostri servizi, il nostro portfolio e fornire un punto di contatto professionale per i nostri clienti e partner.Caratteristiche PrincipaliSingle Page Application (SPA): Esperienza utente fluida e reattiva su un'unica pagina.Performance Elevate: Ottimizzato per la velocità di caricamento e i Core Web Vitals.Design Professionale: Estetica pulita, moderna e responsive, ispirata alle migliori agenzie web.Contatti Funzionanti: Modulo contatti integrato e protetto da spam (senza necessità di un backend server).Tecnologie Moderne: Basato su strumenti all'avanguardia per lo sviluppo frontend.Tecnologie UtilizzateFramework UI/SSG: [Astro / Next.js (Static Export)]Styling: [Tailwind CSS]Linguaggi: HTML, CSS, JavaScript (TypeScript opzionale)Gestione Form: [Formspree.io / Netlify Forms]Deployment: GitHub PagesStruttura del Progetto.
+├── public/                 # Contenuti statici (immagini, font, ecc.)
+├── src/                    # Codice sorgente del sito
+│   ├── components/         # Componenti riutilizzabili dell'UI
+│   ├── layouts/            # Layout di pagina
+│   ├── pages/              # Le pagine del sito (o la singola pagina principale)
+│   └── styles/             # File di stile globali o base (se non usi solo Tailwind JIT)
+├── astro.config.mjs        # Configurazione di Astro (o next.config.mjs per Next.js)
+├── tailwind.config.cjs     # Configurazione di Tailwind CSS
+├── package.json            # Dipendenze e script del progetto
+├── postcss.config.cjs      # Configurazione di PostCSS
+└── README.md               # Questo file
+Come Contribuire / Sviluppare LocalmentePer iniziare a lavorare su questo progetto, segui questi passaggi:Clona il repository:git clone https://github.com/[TuoUtenteGitHub]/[NomeRepo].git
+cd [NomeRepo]
+Installa le dipendenze:Assicurati di avere Node.js (versione 18 o superiore consigliata) e npm installati.npm install
+Avvia il server di sviluppo:Questo comando avvierà un server di sviluppo locale con Hot Module Replacement (HMR).npm run dev
+Il sito sarà disponibile su http://localhost:3000 (o altra porta indicata).Costruisci il sito per la produzione:Questo comando genererà tutti i file statici nella cartella dist/ (o out/).npm run build
+Deployment su GitHub PagesQuesto progetto è configurato per il deployment automatico su GitHub Pages.Configurazione del branch di deployment: Assicurati che il branch main (o un altro branch che preferisci) sia configurato come sorgente per GitHub Pages nelle impostazioni del repository (Settings -> Pages).Cartella di build: Il processo di build genera i file statici nella cartella dist/ (o out/). Assicurati che GitHub Pages sia configurato per servire i contenuti da questa cartella (es. /dist per la sorgente main).GitHub Actions (opzionale ma consigliato):È presente un workflow GitHub Actions (vedi .github/workflows/deploy.yml) che automatizza il processo di build e deployment ogni volta che viene effettuato un push sul branch main.Configurazione del Modulo ContattiIl modulo contatti utilizza [Formspree.io / Netlify Forms] per gestire le submission senza un backend lato server.Registrati su [Formspree.io / Netlify]: Crea un account se non ne hai già uno.Configura il tuo modulo:Per Formspree: Segui le istruzioni di Formspree per creare un nuovo form e ottenere l'URL di endpoint. Modifica l'attributo action nel file src/components/ContactForm.astro (o dove si trova il tuo modulo) con questo URL.Per Netlify Forms: Assicurati che il tuo repository sia collegato a Netlify (anche solo per le funzionalità di build/forms) e aggiungi l'attributo data-netlify="true" al tag <form>. Netlify rileverà automaticamente il modulo.Antispam: Entrambi i servizi offrono soluzioni antispam integrate (come honeypot fields o reCAPTCHA). Consulta la loro documentazione per l'implementazione specifica.CreditiDesign ispirazione: [Menzionare giobi.com o altre ispirazioni]Icone: [Font Awesome / Lucide Icons / ecc.]Font: [Google Fonts / Typekit / ecc.]
