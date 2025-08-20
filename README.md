@@ -93,6 +93,17 @@ giobicom25/
 
 Per iniziare a lavorare su questo progetto, segui questi passaggi:
 
+## 📋 Setup & Configuration
+
+For complete setup instructions including Google Maps integration, blog management with Markdown files, and FAQ management, see the detailed [setup.md](setup.md) file.
+
+Quick setup steps:
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Copy `.env.example` to `.env` and configure your API keys
+4. Run development server: `npm run dev`
+5. Build for production: `npm run build`
+
 ### Prerequisiti
 - Node.js (versione 18 o superiore)
 - npm o yarn

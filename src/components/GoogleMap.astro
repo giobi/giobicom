@@ -1,0 +1,87 @@
+---
+// src/components/GoogleMap.astro
+export interface Props {
+  apiKey: string;
+  center?: { lat: number; lng: number };
+  zoom?: number;
+  height?: string;
+}
+
+const { 
+  apiKey, 
+  center = { lat: 45.9127, lng: 8.5595 }, // Verbania, Italy
+  zoom = 15,
+  height = "400px"
+} = Astro.props;
+---
+
+<div id="map" style={`height: ${height}; width: 100%;`} class="rounded-lg"></div>
+
+<script define:vars={{ apiKey, center, zoom }}>
+  // Carica Google Maps API
+  function initMap() {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: zoom,
+      center: center,
+      styles: [
+        // Stile dark per matching con il tema del sito
+        { elementType: "geometry", stylers: [{ color: "#212121" }] },
+        { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
+        { elementType: "labels.text.fill", stylers: [{ color: "#757575" }] },
+        { elementType: "labels.text.stroke", stylers: [{ color: "#212121" }] },
+        {
+          featureType: "administrative",
+          elementType: "geometry",
+          stylers: [{ color: "#757575" }]
+        },
+        {
+          featureType: "road",
+          elementType: "geometry.fill",
+          stylers: [{ color: "#2c2c2c" }]
+        },
+        {
+          featureType: "road",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#8a8a8a" }]
+        },
+        {
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [{ color: "#000000" }]
+        }
+      ]
+    });
+
+    // Aggiungi marker per la location
+    new google.maps.Marker({
+      position: center,
+      map: map,
+      title: "Giobi.com - Sviluppo Web",
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 10,
+        fillColor: "#4ade80", // green-400
+        fillOpacity: 1,
+        strokeWeight: 2,
+        strokeColor: "#ffffff"
+      }
+    });
+  }
+
+  // Carica l'API e inizializza la mappa
+  function loadGoogleMaps() {
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+    script.async = true;
+    script.defer = true;
+    window.initMap = initMap; // Make initMap globally available for the callback
+    document.head.appendChild(script);
+  }
+
+  // Inizializza quando il DOM è pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadGoogleMaps);
+  } else {
+    loadGoogleMaps();
+  }
+</script>
