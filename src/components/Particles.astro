@@ -1,0 +1,143 @@
+---
+// Particles component for dynamic background effects
+---
+
+<div id="particles-js" class="absolute inset-0 z-0"></div>
+
+<script>
+// Simple canvas-based particle system to replace particles.js
+(function() {
+  const particlesContainer = document.getElementById('particles-js');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  
+  particlesContainer.appendChild(canvas);
+  
+  let particles = [];
+  const particleCount = 60;
+  const colors = ['#ff0080', '#00ff80', '#8000ff', '#ff8000', '#0080ff', '#ff0040'];
+  
+  // Resize canvas
+  function resizeCanvas() {
+    canvas.width = particlesContainer.offsetWidth;
+    canvas.height = particlesContainer.offsetHeight;
+  }
+  
+  // Particle class
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 2;
+      this.vy = (Math.random() - 0.5) * 2;
+      this.size = Math.random() * 3 + 1;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.opacity = Math.random() * 0.5 + 0.2;
+    }
+    
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      
+      // Keep particles in bounds
+      this.x = Math.max(0, Math.min(canvas.width, this.x));
+      this.y = Math.max(0, Math.min(canvas.height, this.y));
+    }
+    
+    draw() {
+      ctx.globalAlpha = this.opacity;
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Draw connections
+      particles.forEach(particle => {
+        if (particle !== this) {
+          const distance = Math.sqrt(
+            Math.pow(this.x - particle.x, 2) + Math.pow(this.y - particle.y, 2)
+          );
+          
+          if (distance < 100) {
+            ctx.globalAlpha = (100 - distance) / 100 * 0.3;
+            ctx.strokeStyle = '#00ff41';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(particle.x, particle.y);
+            ctx.stroke();
+          }
+        }
+      });
+    }
+  }
+  
+  // Initialize particles
+  function init() {
+    resizeCanvas();
+    particles = [];
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+  }
+  
+  // Animation loop
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach(particle => {
+      particle.update();
+      particle.draw();
+    });
+    
+    requestAnimationFrame(animate);
+  }
+  
+  // Event listeners
+  window.addEventListener('resize', resizeCanvas);
+  
+  // Mouse interaction
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    
+    particles.forEach(particle => {
+      const distance = Math.sqrt(
+        Math.pow(mouseX - particle.x, 2) + Math.pow(mouseY - particle.y, 2)
+      );
+      
+      if (distance < 100) {
+        particle.vx += (particle.x - mouseX) / distance * 0.5;
+        particle.vy += (particle.y - mouseY) / distance * 0.5;
+      }
+    });
+  });
+  
+  // Start
+  init();
+  animate();
+})();
+</script>
+
+<style>
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+}
+
+#particles-js canvas {
+  display: block;
+  vertical-align: bottom;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 0.7;
+}
+</style>

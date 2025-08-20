@@ -9,16 +9,38 @@
   }
   
   body {
-    @apply font-mono text-green-400 bg-black;
+    @apply font-mono text-green-400;
+    background: linear-gradient(45deg, #0f0f0f 0%, #1a0825 25%, #0a1829 50%, #0d1b2a 75%, #0f0f0f 100%);
     background-image: 
-      linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
+      linear-gradient(rgba(255, 0, 128, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 128, 0.05) 1px, transparent 1px),
+      linear-gradient(rgba(128, 0, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 128, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px, 20px 20px, 40px 40px, 40px 40px;
+    animation: backgroundShift 20s ease-in-out infinite;
+  }
+  
+  @keyframes backgroundShift {
+    0%, 100% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+    25% { background-position: 10% 10%, 5% 15%, 20% 5%, 15% 20%; }
+    50% { background-position: 20% 20%, 10% 30%, 40% 10%, 30% 40%; }
+    75% { background-position: 10% 30%, 15% 5%, 20% 35%, 35% 20%; }
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold leading-tight text-green-300;
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+    @apply font-bold leading-tight;
+    background: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
   
   h1 {
@@ -50,20 +72,36 @@
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 font-bold rounded-none border-2 transition-all duration-200 focus:outline-none uppercase tracking-wider;
     text-shadow: 0 0 5px currentColor;
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.4);
+    background: linear-gradient(45deg, transparent, rgba(255, 0, 128, 0.1));
   }
   
   .btn-primary {
-    @apply btn bg-transparent border-green-400 text-green-400 hover:bg-green-400 hover:text-black hover:shadow-green-400;
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3), inset 0 0 15px rgba(0, 255, 65, 0.1);
+    @apply btn bg-transparent text-white;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000) 1;
+    color: #00ff80;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000);
+    background-size: 400% 400%;
+    animation: gradientShift 0.5s ease-in-out;
+    color: #000;
+    text-shadow: none;
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
   }
   
   .btn-secondary {
-    @apply btn bg-transparent border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-black;
+    @apply btn bg-transparent border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-black;
+    box-shadow: 0 0 15px rgba(128, 0, 255, 0.4);
   }
   
   .btn-outline {
-    @apply btn border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black;
+    @apply btn border-2 text-orange-400 hover:bg-orange-500 hover:text-black;
+    border-color: #ff8000;
+    box-shadow: 0 0 15px rgba(255, 128, 0, 0.4);
   }
   
   .container-custom {
@@ -80,15 +118,38 @@
   }
   
   .gradient-text {
-    @apply text-green-300;
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+    background: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
   }
   
   .retro-border {
-    border: 2px solid #00ff41;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000, #0080ff) 1;
     box-shadow: 
-      0 0 10px rgba(0, 255, 65, 0.3),
-      inset 0 0 10px rgba(0, 255, 65, 0.1);
+      0 0 10px rgba(255, 0, 128, 0.4),
+      0 0 20px rgba(0, 255, 128, 0.2),
+      inset 0 0 10px rgba(128, 0, 255, 0.1);
+    animation: borderGlow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes borderGlow {
+    0% { 
+      box-shadow: 
+        0 0 10px rgba(255, 0, 128, 0.4),
+        0 0 20px rgba(0, 255, 128, 0.2),
+        inset 0 0 10px rgba(128, 0, 255, 0.1);
+    }
+    100% { 
+      box-shadow: 
+        0 0 15px rgba(255, 0, 128, 0.6),
+        0 0 30px rgba(0, 255, 128, 0.4),
+        inset 0 0 15px rgba(128, 0, 255, 0.2);
+    }
   }
 }
 
