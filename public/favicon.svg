@@ -1,17 +1,28 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
-    </linearGradient>
+    <style>
+      .bg { fill: #0f0f0f; }
+      .bracket-outer { fill: #64949c; }
+      .bracket-inner { fill: #1e5960; }
+    </style>
   </defs>
   
-  <!-- Background circle -->
-  <circle cx="100" cy="100" r="95" fill="url(#gradient)" />
+  <!-- Background -->
+  <rect width="200" height="200" class="bg" />
   
-  <!-- Letter G -->
-  <text x="100" y="130" font-family="Arial Black, Arial" font-size="100" font-weight="bold" text-anchor="middle" fill="white">G</text>
+  <!-- Left bracket outer -->
+  <path d="M20 40 Q20 20 40 20 L50 20 L50 40 L40 40 Q40 40 40 40 L40 160 Q40 160 40 160 L50 160 L50 180 L40 180 Q20 180 20 160 Z" class="bracket-outer" />
   
-  <!-- Small dot for modern touch -->
-  <circle cx="140" cy="80" r="8" fill="white" opacity="0.8" />
+  <!-- Left bracket inner -->
+  <path d="M40 50 L40 150" stroke="#1e5960" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- Center circle (broken) -->
+  <path d="M70 100 A30 30 0 0 1 130 100" fill="none" stroke="#1e5960" stroke-width="12" stroke-linecap="round" />
+  <path d="M130 100 A30 30 0 0 1 70 100" fill="none" stroke="#1e5960" stroke-width="12" stroke-linecap="round" stroke-dasharray="20 20" />
+  
+  <!-- Right bracket outer -->
+  <path d="M180 40 Q180 20 160 20 L150 20 L150 40 L160 40 Q160 40 160 40 L160 160 Q160 160 160 160 L150 160 L150 180 L160 180 Q180 180 180 160 Z" class="bracket-outer" />
+  
+  <!-- Right bracket inner -->
+  <path d="M160 50 L160 150" stroke="#1e5960" stroke-width="8" stroke-linecap="round" />
 </svg>

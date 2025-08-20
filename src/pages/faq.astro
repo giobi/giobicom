@@ -1,0 +1,88 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import '../styles/global.css';
+
+// Placeholder for future FAQs
+const faqs = [
+  {
+    id: 1,
+    question: 'Quanto costa sviluppare un sito web?',
+    answer: 'Il costo dipende dalla complessità del progetto. Contattateci per un preventivo personalizzato.',
+    category: 'Prezzi'
+  },
+  {
+    id: 2,
+    question: 'Quanto tempo richiede lo sviluppo?',
+    answer: 'I tempi variano in base al progetto, da 2-4 settimane per siti semplici a 2-6 mesi per applicazioni complesse.',
+    category: 'Tempi'
+  }
+];
+---
+
+<Layout 
+  title="FAQ - giobi.com - Domande Frequenti"
+  description="Domande frequenti sui servizi di sviluppo web di giobi.com. Trova risposte sui nostri servizi Laravel e WordPress."
+>
+  <Header slot="header" />
+  
+  <section class="section-padding bg-black">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h1 class="mb-6 text-green-300">[ FAQ ]</h1>
+        <p class="text-xl text-green-500 max-w-3xl mx-auto font-mono">
+          Domande frequenti sui nostri servizi di sviluppo web.<br>
+          <span class="text-green-400">></span> Non trovi la risposta che cerchi? Contattaci direttamente.
+        </p>
+      </div>
+      
+      <!-- Coming Soon Message -->
+      <div class="text-center mb-16">
+        <div class="retro-border bg-black p-8 max-w-2xl mx-auto">
+          <h2 class="text-2xl font-bold mb-4 text-green-300 uppercase tracking-wider">Sezione in Costruzione</h2>
+          <p class="text-green-500 font-mono mb-6">
+            Stiamo preparando una sezione FAQ completa che includerà:
+          </p>
+          <ul class="space-y-2 text-green-400 font-mono text-sm">
+            <li>> Informazioni sui prezzi e preventivi</li>
+            <li>> Tempi di sviluppo e consegna</li>
+            <li>> Tecnologie e linguaggi utilizzati</li>
+            <li>> Processo di sviluppo e metodologie</li>
+            <li>> Supporto e manutenzione post-lancio</li>
+          </ul>
+          <div class="mt-6">
+            <a href="/giobicom25/#contatti" class="btn-primary">
+              CONTATTACI PER DOMANDE
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Future FAQ structure (commented out for now) -->
+      <!--
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <div class="card p-6">
+              <div class="mb-3">
+                <span class="px-2 py-1 border border-green-400 text-green-400 text-xs font-mono uppercase">
+                  {faq.category}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-green-300 uppercase tracking-wider">
+                {faq.question}
+              </h3>
+              <p class="text-green-500 font-mono text-sm leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

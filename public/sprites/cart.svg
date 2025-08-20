@@ -1,0 +1,26 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .pixel { fill: #00ff41; }
+    .dark { fill: #00aa2b; }
+  </style>
+  
+  <!-- Cart body -->
+  <rect x="8" y="14" width="16" height="8" class="pixel"/>
+  <rect x="6" y="16" width="2" height="4" class="pixel"/>
+  <rect x="24" y="16" width="2" height="4" class="pixel"/>
+  
+  <!-- Handle -->
+  <rect x="4" y="12" width="2" height="8" class="pixel"/>
+  <rect x="4" y="10" width="8" height="2" class="pixel"/>
+  
+  <!-- Wheels -->
+  <rect x="10" y="22" width="4" height="4" class="pixel"/>
+  <rect x="18" y="22" width="4" height="4" class="pixel"/>
+  <rect x="11" y="23" width="2" height="2" class="dark"/>
+  <rect x="19" y="23" width="2" height="2" class="dark"/>
+  
+  <!-- Items in cart -->
+  <rect x="10" y="12" width="2" height="2" class="pixel"/>
+  <rect x="14" y="10" width="2" height="4" class="pixel"/>
+  <rect x="18" y="12" width="2" height="2" class="pixel"/>
+</svg>

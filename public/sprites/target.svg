@@ -1,0 +1,21 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .pixel { fill: #00ff41; }
+    .dark { fill: #00aa2b; }
+  </style>
+  
+  <!-- Target rings -->
+  <rect x="8" y="8" width="16" height="16" class="pixel"/>
+  <rect x="10" y="10" width="12" height="12" class="dark"/>
+  <rect x="12" y="12" width="8" height="8" class="pixel"/>
+  <rect x="14" y="14" width="4" height="4" class="dark"/>
+  
+  <!-- Center dot -->
+  <rect x="15" y="15" width="2" height="2" class="pixel"/>
+  
+  <!-- Crosshairs -->
+  <rect x="15" y="4" width="2" height="4" class="pixel"/>
+  <rect x="15" y="24" width="2" height="4" class="pixel"/>
+  <rect x="4" y="15" width="4" height="2" class="pixel"/>
+  <rect x="24" y="15" width="4" height="2" class="pixel"/>
+</svg>
