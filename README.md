@@ -1,18 +1,266 @@
-[Nome Agenzia] - Sito Web UfficialeBenvenuti nel repository del sito web ufficiale di [Nome Agenzia]. Questo sito è stato sviluppato per presentare i nostri servizi, il nostro portfolio e fornire un punto di contatto professionale per i nostri clienti e partner.Caratteristiche PrincipaliSingle Page Application (SPA): Esperienza utente fluida e reattiva su un'unica pagina.Performance Elevate: Ottimizzato per la velocità di caricamento e i Core Web Vitals.Design Professionale: Estetica pulita, moderna e responsive, ispirata alle migliori agenzie web.Contatti Funzionanti: Modulo contatti integrato e protetto da spam (senza necessità di un backend server).Tecnologie Moderne: Basato su strumenti all'avanguardia per lo sviluppo frontend.Tecnologie UtilizzateFramework UI/SSG: [Astro / Next.js (Static Export)]Styling: [Tailwind CSS]Linguaggi: HTML, CSS, JavaScript (TypeScript opzionale)Gestione Form: [Formspree.io / Netlify Forms]Deployment: GitHub PagesStruttura del Progetto.
-├── public/                 # Contenuti statici (immagini, font, ecc.)
+# Giobi.com - Sviluppo Web e Applicazioni Laravel
+
+Benvenuti nel repository del sito web ufficiale di **Giobi.com**, agenzia specializzata nello sviluppo di siti web e applicazioni Laravel a Milano. Il nostro team combina oltre 15 anni di esperienza nel settore con le tecnologie più moderne per creare soluzioni web innovative e performanti.
+
+## 🚀 La Nostra Missione
+
+Gestiamo ogni progetto con la massima cura, dalla singola landing page ai gestionali web complessi, passando per e-commerce avanzati e strategie di social media marketing. La nostra filosofia **Growth-Driven Design** vede il sito web come uno strumento in crescita continua.
+
+## 🛠️ Caratteristiche Principali
+
+- **Single Page Application (SPA)**: Esperienza utente fluida e reattiva
+- **Performance Elevate**: Ottimizzato per Core Web Vitals e velocità di caricamento
+- **Design Responsivo**: Ottimizzazione mobile-first per oltre il 50% del traffico mobile
+- **Tecnologie in Evoluzione**: WordPress e Laravel con codice sviluppato ad hoc
+- **Hosting Dedicato**: Server ottimizzati per massime performance
+- **Integrazione AI**: Logica di processing per GitHub Copilot e automazioni intelligenti
+
+## 💻 Stack Tecnologico
+
+### Frontend
+- **Framework**: Astro / Next.js (Static Export)
+- **Styling**: Tailwind CSS
+- **Linguaggi**: HTML5, CSS3, JavaScript ES6+, TypeScript
+- **Ottimizzazione**: Core Web Vitals, PWA Support
+
+### Backend
+- **WordPress**: Plugin personalizzati e temi su misura
+- **Laravel**: Applicazioni web robuste e scalabili
+- **PHP**: Sviluppo backend moderno
+- **Database**: MySQL, PostgreSQL
+
+### DevOps & Tools
+- **Deployment**: GitHub Pages, Server dedicati
+- **Version Control**: Git con GitHub Actions
+- **AI Integration**: GitHub Copilot, automazioni intelligenti
+- **Forms**: Formspree.io / Netlify Forms
+- **Analytics**: Tracking avanzato e reportistica
+
+### E-commerce
+- **WooCommerce**: Soluzioni complete per WordPress
+- **Magento**: Partnership per progetti enterprise
+- **Integrazioni**: Sincronizzazione con gestionali esistenti
+
+## 📁 Struttura del Progetto
+```
+giobicom25/
+├── public/                 # Contenuti statici (immagini, font, favicon)
 ├── src/                    # Codice sorgente del sito
-│   ├── components/         # Componenti riutilizzabili dell'UI
-│   ├── layouts/            # Layout di pagina
-│   ├── pages/              # Le pagine del sito (o la singola pagina principale)
-│   └── styles/             # File di stile globali o base (se non usi solo Tailwind JIT)
-├── astro.config.mjs        # Configurazione di Astro (o next.config.mjs per Next.js)
-├── tailwind.config.cjs     # Configurazione di Tailwind CSS
-├── package.json            # Dipendenze e script del progetto
-├── postcss.config.cjs      # Configurazione di PostCSS
-└── README.md               # Questo file
-Come Contribuire / Sviluppare LocalmentePer iniziare a lavorare su questo progetto, segui questi passaggi:Clona il repository:git clone https://github.com/[TuoUtenteGitHub]/[NomeRepo].git
-cd [NomeRepo]
-Installa le dipendenze:Assicurati di avere Node.js (versione 18 o superiore consigliata) e npm installati.npm install
-Avvia il server di sviluppo:Questo comando avvierà un server di sviluppo locale con Hot Module Replacement (HMR).npm run dev
-Il sito sarà disponibile su http://localhost:3000 (o altra porta indicata).Costruisci il sito per la produzione:Questo comando genererà tutti i file statici nella cartella dist/ (o out/).npm run build
-Deployment su GitHub PagesQuesto progetto è configurato per il deployment automatico su GitHub Pages.Configurazione del branch di deployment: Assicurati che il branch main (o un altro branch che preferisci) sia configurato come sorgente per GitHub Pages nelle impostazioni del repository (Settings -> Pages).Cartella di build: Il processo di build genera i file statici nella cartella dist/ (o out/). Assicurati che GitHub Pages sia configurato per servire i contenuti da questa cartella (es. /dist per la sorgente main).GitHub Actions (opzionale ma consigliato):È presente un workflow GitHub Actions (vedi .github/workflows/deploy.yml) che automatizza il processo di build e deployment ogni volta che viene effettuato un push sul branch main.Configurazione del Modulo ContattiIl modulo contatti utilizza [Formspree.io / Netlify Forms] per gestire le submission senza un backend lato server.Registrati su [Formspree.io / Netlify]: Crea un account se non ne hai già uno.Configura il tuo modulo:Per Formspree: Segui le istruzioni di Formspree per creare un nuovo form e ottenere l'URL di endpoint. Modifica l'attributo action nel file src/components/ContactForm.astro (o dove si trova il tuo modulo) con questo URL.Per Netlify Forms: Assicurati che il tuo repository sia collegato a Netlify (anche solo per le funzionalità di build/forms) e aggiungi l'attributo data-netlify="true" al tag <form>. Netlify rileverà automaticamente il modulo.Antispam: Entrambi i servizi offrono soluzioni antispam integrate (come honeypot fields o reCAPTCHA). Consulta la loro documentazione per l'implementazione specifica.CreditiDesign ispirazione: [Menzionare giobi.com o altre ispirazioni]Icone: [Font Awesome / Lucide Icons / ecc.]Font: [Google Fonts / Typekit / ecc.]
+│   ├── components/         # Componenti riutilizzabili (Header, Footer, Forms)
+│   ├── layouts/            # Layout di pagina responsive
+│   ├── pages/              # Pagine del sito (Home, Servizi, Portfolio, Contatti)
+│   ├── styles/             # Stili globali e theme personalizzato
+│   └── utils/              # Utilities e helper functions
+├── agents/                 # Configurazione AI e Copilot
+│   ├── agents.md           # Specifiche agenti AI
+│   ├── prompts/            # Template prompt per diversi task
+│   └── workflows/          # Workflow automatizzati
+├── docs/                   # Documentazione tecnica
+├── astro.config.mjs        # Configurazione Astro
+├── tailwind.config.cjs     # Setup Tailwind personalizzato
+├── package.json            # Dipendenze e script
+├── postcss.config.cjs      # Configurazione PostCSS
+├── home-2024.html          # Homepage legacy per riferimento
+└── README.md               # Documentazione principale
+```
+
+## 🔧 Servizi Specializzati
+
+### 🌐 Sviluppo Web
+- **Siti Multilingua**: Traduzioni e localizzazione per mercati internazionali
+- **Growth-Driven Design**: Approccio iterativo con incontri mensili e miglioramenti continui
+- **Mobile Optimization**: Design mobile-first per dispositivi di ogni dimensione
+- **Performance**: Ottimizzazione avanzata per velocità e SEO
+
+### 🛒 E-commerce Solutions
+- **WooCommerce**: Negozi online completi su WordPress
+- **Magento Enterprise**: Partnership per progetti complessi
+- **Integrazioni Custom**: Sincronizzazione con gestionali aziendali
+- **Payment Gateway**: Integrazione sistemi di pagamento sicuri
+
+### 📱 Social Media Integration
+- **Instagram & Facebook**: Strategie integrate per massima visibilità
+- **Content Management**: Gestione contenuti social coordinata
+- **Analytics**: Tracking e reportistica social media
+- **Automation**: Bot e automazioni per customer service
+
+### 🤖 AI & Automation
+- **GitHub Copilot**: Logica di processing per sviluppo assistito
+- **Workflow Automation**: GitHub Actions e CI/CD
+- **Content Generation**: AI per contenuti e copywriting
+- **Code Review**: Automazioni per quality assurance
+## 🚀 Come Contribuire / Sviluppare Localmente
+
+Per iniziare a lavorare su questo progetto, segui questi passaggi:
+
+### Prerequisiti
+- Node.js (versione 18 o superiore)
+- npm o yarn
+- Git
+- GitHub Copilot (raccomandato per sviluppo assistito)
+
+### Setup Iniziale
+```bash
+# Clona il repository
+git clone https://github.com/giobi/giobicom25.git
+cd giobicom25
+
+# Installa le dipendenze
+npm install
+
+# Configura GitHub Copilot (se disponibile)
+# Assicurati di aver configurato le specifiche in agents/agents.md
+```
+
+### Sviluppo
+```bash
+# Avvia il server di sviluppo con HMR
+npm run dev
+# Il sito sarà disponibile su http://localhost:3000
+
+# Build per produzione
+npm run build
+
+# Preview build di produzione
+npm run preview
+
+# Lint del codice
+npm run lint
+
+# Test (se configurati)
+npm run test
+```
+
+### Workflow con GitHub Copilot
+1. Consulta `agents/agents.md` per le specifiche degli agenti AI
+2. Usa i prompt template in `agents/prompts/` per task comuni
+3. Segui i workflow in `agents/workflows/` per processi standardizzati
+
+## 🌐 Deployment
+
+### GitHub Pages (Automatico)
+Il progetto è configurato per deployment automatico su GitHub Pages tramite GitHub Actions.
+
+**Configurazione:**
+- Branch sorgente: `main`
+- Cartella build: `dist/`
+- Workflow: `.github/workflows/deploy.yml`
+
+### Server Dedicato Giobi
+Per clienti che richiedono hosting dedicato sui nostri server:
+- **Performance**: Server ottimizzati per WordPress e Laravel
+- **Sicurezza**: Backup automatici e monitoraggio 24/7
+- **Scalabilità**: Resources scaling automatico
+- **Support**: Assistenza tecnica specializzata
+
+## 📞 Configurazione Moduli di Contatto
+
+### Formspree.io Integration
+```html
+<!-- Esempio form contatti -->
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="email" name="email" placeholder="La tua email" required>
+    <textarea name="message" placeholder="Il tuo messaggio"></textarea>
+    <input type="hidden" name="_subject" value="Nuovo contatto da giobi.com">
+    <input type="hidden" name="_next" value="https://giobi.com/grazie">
+    <button type="submit">Invia Messaggio</button>
+</form>
+```
+
+### Netlify Forms (Alternativa)
+```html
+<form name="contact" method="POST" data-netlify="true">
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Messaggio"></textarea>
+    <button type="submit">Contattaci</button>
+</form>
+```
+
+## 🤖 Logica di Processing Copilot
+
+### Configurazione Agenti AI
+Il progetto utilizza GitHub Copilot con configurazioni personalizzate per:
+
+1. **Code Generation**: Automazione sviluppo componenti
+2. **Documentation**: Generazione automatica docs
+3. **Testing**: Creazione test automatizzati
+4. **Refactoring**: Ottimizzazione codice esistente
+5. **Translation**: Gestione contenuti multilingua
+
+Vedi `agents/agents.md` per specifiche complete.
+
+### Prompt Engineering
+Template prompt ottimizzati per:
+- Sviluppo WordPress themes
+- Componenti Laravel
+- Ottimizzazione performance
+- SEO e accessibilità
+- Responsive design
+
+## 📈 Analytics e Monitoraggio
+
+### Performance Tracking
+- **Core Web Vitals**: Monitoraggio continuo metriche Google
+- **Page Speed**: Ottimizzazione caricamento pagine
+- **Mobile Metrics**: Performance su dispositivi mobili
+- **SEO Metrics**: Ranking e visibilità
+
+### Business Intelligence
+- **Conversion Tracking**: Monitoraggio obiettivi business
+- **User Journey**: Analisi percorso utente
+- **A/B Testing**: Test iterativi per ottimizzazione
+- **ROI Analysis**: Ritorno investimento progetti
+
+## 🎯 Roadmap 2025
+
+### Q1 2025
+- [ ] Implementazione AI-driven content generation
+- [ ] Ottimizzazione performance Core Web Vitals
+- [ ] Expansion multilingua automatizzata
+
+### Q2 2025
+- [ ] Laravel 11 migration per progetti backend
+- [ ] WordPress Gutenberg custom blocks
+- [ ] Progressive Web App features
+
+### Q3 2025
+- [ ] E-commerce headless architecture
+- [ ] Real-time collaboration tools
+- [ ] Advanced analytics dashboard
+
+### Q4 2025
+- [ ] Machine learning per UX personalization
+- [ ] Blockchain integration per e-commerce
+- [ ] Voice interface development
+
+## 🏆 Crediti e Riconoscimenti
+
+**Team Giobi.com:**
+- Design ispirato a principi di Growth-Driven Design
+- Oltre 15 anni di esperienza nel settore
+- Sede a Milano con copertura nazionale
+- Partnership tecnologiche con leader di settore
+
+**Tecnologie e Risorse:**
+- Icone: [Elpis Icons](https://www.iconfinder.com/iconsets/elpis)
+- Font: Google Fonts ottimizzati per performance
+- Images: Ottimizzazione automatica con lazy loading
+- CDN: Distribuzione globale per massima velocità
+
+---
+
+## 📞 Contatti
+
+**Giobi.com - Sviluppo Web a Milano**
+- 🌐 Website: [giobi.com](https://giobi.com)
+- 📧 Email: info@giobi.com
+- 📍 Milano, Italia
+- 💼 Consulenza gratuita disponibile
+
+**Specializziamo in:**
+- WordPress Development
+- Laravel Applications
+- E-commerce Solutions
+- Social Media Integration
+- Performance Optimization
+- AI-Assisted Development
