@@ -2,24 +2,23 @@
 const navigation = [
   { name: 'Home', href: '/giobicom25/' },
   { name: 'Servizi', href: '/giobicom25/#servizi' },
-  { name: 'Portfolio', href: '/giobicom25/#portfolio' },
   { name: 'Chi Siamo', href: '/giobicom25/#chi-siamo' },
   { name: 'Contatti', href: '/giobicom25/#contatti' },
 ];
 ---
 
-<nav class="bg-white shadow-lg sticky top-0 z-50">
+<nav class="bg-black border-b border-green-400 sticky top-0 z-50 retro-border">
   <div class="container-custom">
     <div class="flex justify-between items-center py-4">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
         <a href="/giobicom25/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-          <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
-            <span class="text-white font-bold text-xl">G</span>
+          <div class="w-10 h-10 retro-border bg-black flex items-center justify-center">
+            <span class="text-green-400 font-bold text-xl">{</span>
           </div>
           <div class="hidden sm:block">
-            <div class="text-xl font-bold text-secondary-900">giobi.com</div>
-            <div class="text-sm text-secondary-600">Sviluppo Web & Laravel</div>
+            <div class="text-xl font-bold text-green-300">giobi.com</div>
+            <div class="text-sm text-green-500">[ SVILUPPO WEB & LARAVEL ]</div>
           </div>
         </a>
       </div>
@@ -29,13 +28,13 @@ const navigation = [
         {navigation.map((item) => (
           <a
             href={item.href}
-            class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-200"
+            class="text-green-400 hover:text-green-300 font-bold transition-colors duration-200 uppercase tracking-wider"
           >
             {item.name}
           </a>
         ))}
         <a href="/giobicom25/#contatti" class="btn-primary">
-          Contattaci
+          CONTATTACI
         </a>
       </div>
       
@@ -43,7 +42,7 @@ const navigation = [
       <div class="md:hidden">
         <button
           type="button"
-          class="mobile-menu-button text-secondary-700 hover:text-primary-600 focus:outline-none focus:text-primary-600"
+          class="mobile-menu-button text-green-400 hover:text-green-300 focus:outline-none focus:text-green-300"
           aria-label="Toggle menu"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,13 +71,13 @@ const navigation = [
         {navigation.map((item) => (
           <a
             href={item.href}
-            class="text-secondary-700 hover:text-primary-600 font-medium py-2 transition-colors duration-200"
+            class="text-green-400 hover:text-green-300 font-bold py-2 transition-colors duration-200 uppercase tracking-wider"
           >
             {item.name}
           </a>
         ))}
         <a href="/giobicom25/#contatti" class="btn-primary w-fit mt-4">
-          Contattaci
+          CONTATTACI
         </a>
       </div>
     </div>

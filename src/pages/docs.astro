@@ -1,0 +1,84 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout 
+  title="Documentazione - giobi.com - Guide e Riferimenti Tecnici"
+  description="Documentazione tecnica per i progetti di giobi.com. Guide, API reference e best practices per Laravel e WordPress."
+>
+  <Header slot="header" />
+  
+  <section class="section-padding bg-black">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h1 class="mb-6 text-green-300">[ DOCUMENTAZIONE ]</h1>
+        <p class="text-xl text-green-500 max-w-3xl mx-auto font-mono">
+          Guide tecniche, API reference e documentazione per sviluppatori.<br>
+          <span class="text-green-400">></span> Tutto quello che serve per lavorare con i nostri progetti.
+        </p>
+      </div>
+      
+      <!-- Coming Soon Message -->
+      <div class="text-center mb-16">
+        <div class="retro-border bg-black p-8 max-w-2xl mx-auto">
+          <h2 class="text-2xl font-bold mb-4 text-green-300 uppercase tracking-wider">Documentazione in Preparazione</h2>
+          <p class="text-green-500 font-mono mb-6">
+            Stiamo creando una documentazione completa che includerà:
+          </p>
+          <ul class="space-y-2 text-green-400 font-mono text-sm">
+            <li>> Setup e configurazione ambiente di sviluppo</li>
+            <li>> Standard di codifica e convenzioni</li>
+            <li>> API reference per integrazioni</li>
+            <li>> Guide per WordPress e Laravel</li>
+            <li>> Deployment e best practices</li>
+            <li>> Troubleshooting e FAQ tecniche</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Suggested Documentation Structure -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card p-6">
+          <h3 class="text-xl font-bold mb-4 text-green-300 uppercase tracking-wider">Getting Started</h3>
+          <p class="text-green-500 font-mono text-sm mb-4">
+            Guide per iniziare a lavorare con i nostri progetti.
+          </p>
+          <ul class="space-y-1 text-green-400 font-mono text-xs">
+            <li>> Environment setup</li>
+            <li>> Dependencies installation</li>
+            <li>> First run configuration</li>
+          </ul>
+        </div>
+        
+        <div class="card p-6">
+          <h3 class="text-xl font-bold mb-4 text-green-300 uppercase tracking-wider">Laravel Projects</h3>
+          <p class="text-green-500 font-mono text-sm mb-4">
+            Documentazione specifica per progetti Laravel.
+          </p>
+          <ul class="space-y-1 text-green-400 font-mono text-xs">
+            <li>> Artisan commands</li>
+            <li>> Database migrations</li>
+            <li>> API endpoints</li>
+          </ul>
+        </div>
+        
+        <div class="card p-6">
+          <h3 class="text-xl font-bold mb-4 text-green-300 uppercase tracking-wider">WordPress Projects</h3>
+          <p class="text-green-500 font-mono text-sm mb-4">
+            Guide per temi e plugin WordPress custom.
+          </p>
+          <ul class="space-y-1 text-green-400 font-mono text-xs">
+            <li>> Theme development</li>
+            <li>> Plugin architecture</li>
+            <li>> Custom post types</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
