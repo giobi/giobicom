@@ -1,0 +1,113 @@
+---
+const navigation = [
+  { name: 'Home', href: '/giobicom25/' },
+  { name: 'Servizi', href: '/giobicom25/#servizi' },
+  { name: 'Portfolio', href: '/giobicom25/#portfolio' },
+  { name: 'Chi Siamo', href: '/giobicom25/#chi-siamo' },
+  { name: 'Contatti', href: '/giobicom25/#contatti' },
+];
+---
+
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="container-custom">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <a href="/giobicom25/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xl">G</span>
+          </div>
+          <div class="hidden sm:block">
+            <div class="text-xl font-bold text-secondary-900">giobi.com</div>
+            <div class="text-sm text-secondary-600">Sviluppo Web & Laravel</div>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navigation.map((item) => (
+          <a
+            href={item.href}
+            class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-200"
+          >
+            {item.name}
+          </a>
+        ))}
+        <a href="/giobicom25/#contatti" class="btn-primary">
+          Contattaci
+        </a>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="mobile-menu-button text-secondary-700 hover:text-primary-600 focus:outline-none focus:text-primary-600"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              class="menu-icon"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+            <path
+              class="close-icon hidden"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-3">
+        {navigation.map((item) => (
+          <a
+            href={item.href}
+            class="text-secondary-700 hover:text-primary-600 font-medium py-2 transition-colors duration-200"
+          >
+            {item.name}
+          </a>
+        ))}
+        <a href="/giobicom25/#contatti" class="btn-primary w-fit mt-4">
+          Contattaci
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    
+    if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
+    }
+  });
+</script>

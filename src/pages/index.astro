@@ -1,0 +1,464 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import '../styles/global.css';
+
+const services = [
+  {
+    title: 'Sviluppo WordPress',
+    description: 'Temi personalizzati, plugin su misura e ottimizzazione performance per siti WordPress professionali.',
+    icon: '🚀',
+    features: ['Temi Personalizzati', 'Plugin Custom', 'Ottimizzazione SEO', 'Manutenzione']
+  },
+  {
+    title: 'Applicazioni Laravel',
+    description: 'Sviluppo di applicazioni web robuste e scalabili con il framework Laravel più moderno.',
+    icon: '⚡',
+    features: ['API REST', 'Dashboard Admin', 'Sistema Auth', 'Database Design']
+  },
+  {
+    title: 'E-commerce Solutions',
+    description: 'Negozi online completi con WooCommerce o soluzioni custom per vendite digitali.',
+    icon: '🛒',
+    features: ['WooCommerce', 'Payment Gateway', 'Gestione Magazzino', 'Analytics']
+  },
+  {
+    title: 'Consulenza Tecnica',
+    description: 'Analisi, progettazione e ottimizzazione di architetture web esistenti o nuove.',
+    icon: '💡',
+    features: ['Code Review', 'Architettura', 'Performance', 'Security Audit']
+  }
+];
+
+const portfolio = [
+  {
+    title: 'E-commerce Fashion',
+    description: 'Piattaforma e-commerce completa con gestione multi-magazzino e integrazione CRM.',
+    image: '/giobicom25/images/portfolio-1.jpg',
+    tags: ['Laravel', 'Vue.js', 'MySQL'],
+    url: '#'
+  },
+  {
+    title: 'Portal Aziendale',
+    description: 'Sistema di gestione documentale con workflow approvazione e notifiche real-time.',
+    image: '/giobicom25/images/portfolio-2.jpg',
+    tags: ['WordPress', 'Custom Plugin', 'API'],
+    url: '#'
+  },
+  {
+    title: 'App Mobile Backend',
+    description: 'API Laravel per applicazione mobile iOS/Android con sistema di notifiche push.',
+    image: '/giobicom25/images/portfolio-3.jpg',
+    tags: ['Laravel', 'REST API', 'Redis'],
+    url: '#'
+  }
+];
+
+const stats = [
+  { number: '15+', label: 'Anni di Esperienza' },
+  { number: '200+', label: 'Progetti Completati' },
+  { number: '50+', label: 'Clienti Soddisfatti' },
+  { number: '24/7', label: 'Supporto Tecnico' }
+];
+---
+
+<Layout 
+  title="Giobi.com - Sviluppo Web e Applicazioni Laravel - Programmatore Milano"
+  description="Sviluppo siti web professionali e applicazioni Laravel dal 2008. Specializzati in WordPress, e-commerce e consulenza tecnica. Contatta il nostro team a Milano."
+>
+  <Header slot="header" />
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-50 to-white section-padding">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="animate-fade-in">
+          <h1 class="mb-6 text-balance">
+            <span class="gradient-text">Sviluppo Web</span><br>
+            e Applicazioni Laravel
+          </h1>
+          <p class="text-xl text-secondary-600 mb-8 leading-relaxed">
+            Dal <strong>2008</strong> creiamo soluzioni web innovative con WordPress e Laravel. 
+            Trasformiamo le tue idee in applicazioni web performanti e scalabili.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contatti" class="btn-primary">
+              Richiedi Preventivo Gratuito
+            </a>
+            <a href="#portfolio" class="btn-outline">
+              Vedi i Nostri Lavori
+            </a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-secondary-200">
+            {stats.map((stat) => (
+              <div class="text-center">
+                <div class="text-2xl font-bold text-primary-600">{stat.number}</div>
+                <div class="text-sm text-secondary-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div class="animate-slide-up">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl transform rotate-3"></div>
+            <div class="relative bg-white p-8 rounded-2xl shadow-xl">
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div class="font-mono text-sm text-secondary-800">
+                  <div class="text-primary-600">// Giobi.com</div>
+                  <div class="mt-2">
+                    <span class="text-purple-600">class</span>
+                    <span class="text-blue-600"> WebDeveloper</span>
+                    <span class="text-secondary-800"> {</span>
+                  </div>
+                  <div class="ml-4 mt-1">
+                    <span class="text-green-600">experience</span>
+                    <span class="text-secondary-800">: </span>
+                    <span class="text-orange-600">'15+ years'</span>
+                    <span class="text-secondary-800">;</span>
+                  </div>
+                  <div class="ml-4">
+                    <span class="text-green-600">technologies</span>
+                    <span class="text-secondary-800">: [</span>
+                    <span class="text-orange-600">'Laravel', 'WordPress'</span>
+                    <span class="text-secondary-800">];</span>
+                  </div>
+                  <div class="ml-4">
+                    <span class="text-green-600">location</span>
+                    <span class="text-secondary-800">: </span>
+                    <span class="text-orange-600">'Milano, Italy'</span>
+                    <span class="text-secondary-800">;</span>
+                  </div>
+                  <div class="text-secondary-800">}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="servizi" class="section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="mb-6">I Nostri <span class="gradient-text">Servizi</span></h2>
+        <p class="text-xl text-secondary-600 max-w-3xl mx-auto">
+          Offriamo soluzioni complete per il tuo business digitale, 
+          dalla progettazione allo sviluppo fino alla manutenzione.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {services.map((service, index) => (
+          <div class="card p-6 hover:scale-105 transition-transform duration-300" style={`animation-delay: ${index * 0.1}s`}>
+            <div class="text-4xl mb-4">{service.icon}</div>
+            <h3 class="text-xl font-semibold mb-3">{service.title}</h3>
+            <p class="text-secondary-600 mb-4">{service.description}</p>
+            <ul class="space-y-1">
+              {service.features.map((feature) => (
+                <li class="flex items-center text-sm text-secondary-700">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section-padding bg-secondary-50">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="mb-6">Portfolio <span class="gradient-text">Progetti</span></h2>
+        <p class="text-xl text-secondary-600 max-w-3xl mx-auto">
+          Alcuni dei progetti più significativi realizzati per i nostri clienti.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {portfolio.map((project, index) => (
+          <div class="card overflow-hidden hover:scale-105 transition-transform duration-300" style={`animation-delay: ${index * 0.1}s`}>
+            <div class="aspect-video bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+              <div class="text-6xl opacity-20">🚀</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
+              <p class="text-secondary-600 mb-4">{project.description}</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag) => (
+                  <span class="px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <a href={project.url} class="text-primary-600 hover:text-primary-700 font-medium">
+                Scopri di più →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="chi-siamo" class="section-padding">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="mb-6">Chi <span class="gradient-text">Siamo</span></h2>
+          <p class="text-lg text-secondary-600 mb-6 leading-relaxed">
+            <strong>Giobi.com</strong> è un team di sviluppatori specializzati in tecnologie web moderne. 
+            Dal 2008 aiutiamo aziende e professionisti a digitalizzare i loro processi 
+            attraverso soluzioni web innovative e scalabili.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-6 mb-8">
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center mt-1">
+                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Esperienza Consolidata</h4>
+                <p class="text-secondary-600 text-sm">Oltre 15 anni nel settore dello sviluppo web</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center mt-1">
+                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Team Specializzato</h4>
+                <p class="text-secondary-600 text-sm">Sviluppatori certificati Laravel e WordPress</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center mt-1">
+                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Qualità Garantita</h4>
+                <p class="text-secondary-600 text-sm">Codice pulito, documentato e manutenibile</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center mt-1">
+                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Supporto Continuo</h4>
+                <p class="text-secondary-600 text-sm">Manutenzione e aggiornamenti post-lancio</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contatti" class="btn-primary">
+            Inizia il Tuo Progetto
+          </a>
+        </div>
+        
+        <div class="relative">
+          <div class="aspect-square bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 text-white">
+            <div class="text-center h-full flex flex-col justify-center">
+              <div class="text-6xl mb-4">🎯</div>
+              <h3 class="text-2xl font-bold mb-4">La Nostra Missione</h3>
+              <p class="text-primary-100 leading-relaxed">
+                Trasformare idee innovative in soluzioni web concrete, 
+                aiutando le aziende a crescere nel digitale con tecnologie all'avanguardia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contatti" class="section-padding bg-secondary-900 text-white">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="mb-6 text-white">Richiedi un'<span class="text-primary-400">Analisi Gratuita</span></h2>
+        <p class="text-xl text-secondary-300 max-w-3xl mx-auto">
+          Rivolgiti a un consulente con più di 15 anni di esperienza nel settore. 
+          Analizziamo il tuo progetto e ti proponiamo la soluzione migliore.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-semibold mb-6 text-white">Informazioni di Contatto</h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-1">Indirizzo</h4>
+                  <p class="text-secondary-300">Via 42 Martiri 165<br>Fondotoce, Milano</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-1">Email</h4>
+                  <p class="text-secondary-300">info@giobi.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-1">Orari di Lavoro</h4>
+                  <p class="text-secondary-300">Lun - Ven: 9:00 - 18:00<br>Supporto 24/7</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Map placeholder -->
+          <div class="bg-secondary-800 rounded-lg p-6 text-center">
+            <div class="text-4xl mb-2">🗺️</div>
+            <p class="text-secondary-400">Mappa interattiva</p>
+            <p class="text-sm text-secondary-500 mt-2">
+              Inserire qui integrazione Google Maps
+            </p>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="bg-white rounded-lg p-8 text-secondary-900">
+          <h3 class="text-2xl font-semibold mb-6">Invia un Messaggio</h3>
+          
+          <!-- Form will be integrated with Formspree or similar service -->
+          <form class="space-y-6" id="contact-form">
+            <div>
+              <label for="name" class="block text-sm font-medium text-secondary-700 mb-2">
+                Nome *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                placeholder="Il tuo nome"
+              />
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-secondary-700 mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                placeholder="La tua email"
+              />
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-sm font-medium text-secondary-700 mb-2">
+                Oggetto
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                placeholder="Oggetto del messaggio"
+              />
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-secondary-700 mb-2">
+                Messaggio *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
+                placeholder="Descrivi il tuo progetto..."
+              ></textarea>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <input
+                type="checkbox"
+                id="privacy"
+                name="privacy"
+                required
+                class="mt-1 w-5 h-5 text-primary-600 border-secondary-300 rounded focus:ring-primary-500"
+              />
+              <label for="privacy" class="text-sm text-secondary-600">
+                Accetto il trattamento dei dati personali secondo la 
+                <a href="#" class="text-primary-600 hover:text-primary-700">Privacy Policy</a> *
+              </label>
+            </div>
+            
+            <button
+              type="submit"
+              class="w-full btn-primary py-4 text-lg"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
+              Invia Messaggio
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out 0.2s both;
+  }
+</style>
