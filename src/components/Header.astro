@@ -9,18 +9,16 @@ const navigation = [
 ];
 ---
 
-<nav class="bg-black border-b border-green-400 sticky top-0 z-50 retro-border relative overflow-hidden">
+<nav class="glass-effect border-b-2 border-purple-blue sticky top-0 z-50 relative overflow-hidden">
   <Particles />
   <div class="container-custom relative z-10">
-    <div class="flex justify-between items-center py-4">
+    <div class="flex justify-between items-center py-6">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
         <a href="/giobicom25/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-          <img 
-            src="/giobicom25/images/logo.svg" 
-            alt="Giobi.com Logo" 
-            class="h-12 w-auto"
-          />
+          <div class="text-2xl font-bold tracking-wider gradient-text" style="font-family: 'Orbitron', monospace;">
+            giobi.com
+          </div>
         </a>
       </div>
       
@@ -29,7 +27,8 @@ const navigation = [
         {navigation.map((item) => (
           <a
             href={item.href}
-            class="text-green-400 hover:text-green-300 font-bold transition-colors duration-200 uppercase tracking-wider"
+            class="text-lg font-semibold transition-all duration-300 uppercase tracking-wider hover:scale-105"
+            style="color: var(--color-teal-blue); font-family: 'Orbitron', monospace;"
           >
             {item.name}
           </a>
@@ -43,10 +42,11 @@ const navigation = [
       <div class="md:hidden">
         <button
           type="button"
-          class="mobile-menu-button text-green-400 hover:text-green-300 focus:outline-none focus:text-green-300"
+          class="mobile-menu-button text-2xl transition-colors duration-300"
+          style="color: var(--color-teal-blue);"
           aria-label="Toggle menu"
         >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               class="menu-icon"
               stroke-linecap="round"
@@ -67,12 +67,13 @@ const navigation = [
     </div>
     
     <!-- Mobile Navigation -->
-    <div class="mobile-menu hidden md:hidden pb-4">
-      <div class="flex flex-col space-y-3">
+    <div class="mobile-menu hidden md:hidden pb-6">
+      <div class="flex flex-col space-y-4">
         {navigation.map((item) => (
           <a
             href={item.href}
-            class="text-green-400 hover:text-green-300 font-bold py-2 transition-colors duration-200 uppercase tracking-wider"
+            class="text-lg font-semibold py-3 transition-colors duration-300 uppercase tracking-wider"
+            style="color: var(--color-teal-blue); font-family: 'Orbitron', monospace;"
           >
             {item.name}
           </a>
