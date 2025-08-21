@@ -59,7 +59,7 @@ const stats = [
   { number: '15+', label: 'Anni di Esperienza' },
   { number: '200+', label: 'Progetti Completati' },
   { number: '50+', label: 'Clienti Soddisfatti' },
-  { number: '⚡', label: 'Innovazione Continua' }
+  { sprite: '/giobicom25/sprites/thunder-power.svg', label: 'Innovazione Continua' }
 ];
 ---
 
@@ -105,7 +105,13 @@ const stats = [
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 fade-in-up stagger-3" style="border-top: 2px solid var(--color-purple-blue);">
             {stats.map((stat, index) => (
               <div class="text-center glass-effect p-6 rounded-lg transition-all duration-300 hover:scale-105" style="border: 1px solid var(--color-purple-blue);">
-                <div class="text-3xl font-bold mb-2 gradient-text" style="font-family: 'Orbitron', monospace;">{stat.number}</div>
+                {stat.sprite ? (
+                  <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <img src={stat.sprite} alt={stat.label} class="w-full h-full opacity-80" />
+                  </div>
+                ) : (
+                  <div class="text-3xl font-bold mb-2 gradient-text" style="font-family: 'Orbitron', monospace;">{stat.number}</div>
+                )}
                 <div class="text-sm uppercase tracking-wider" style="color: rgba(238, 238, 238, 0.8); font-family: 'Poppins', sans-serif;">{stat.label}</div>
               </div>
             ))}
@@ -206,7 +212,7 @@ const stats = [
         {portfolio.map((project, index) => (
           <div class="card overflow-hidden hover:scale-105 transition-transform duration-300" style={`animation-delay: ${index * 0.1}s`}>
             <div class="aspect-video bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-              <div class="text-6xl opacity-20">🚀</div>
+              <img src="/giobicom25/sprites/rocket.svg" alt="Progetto" class="w-16 h-16 opacity-20" />
             </div>
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
@@ -312,59 +318,61 @@ const stats = [
         </p>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-16">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-16">
         <!-- Contact Info -->
         <div class="space-y-10">
           <div>
             <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Informazioni di Contatto</h3>
             <div class="space-y-6">
-              <div class="flex items-start space-x-6">
-                <div class="w-16 h-16 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-teal-blue);">
-                  <span style="color: var(--color-teal-blue);" class="text-2xl">📍</span>
+              <div class="flex items-start space-x-4 sm:space-x-6">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 glass-effect rounded-lg flex items-center justify-center flex-shrink-0" style="border: 1px solid var(--color-teal-blue);">
+                  <img src="/giobicom25/sprites/fist-location.svg" alt="Indirizzo" class="w-8 h-8 sm:w-10 sm:h-10 opacity-80" />
                 </div>
-                <div>
-                  <h4 class="font-bold text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Indirizzo</h4>
-                  <p style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">via 42 Martiri 165<br>Verbania 28924 VB</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start space-x-6">
-                <div class="w-16 h-16 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-purple-blue);">
-                  <span style="color: var(--color-purple-blue);" class="text-2xl">📧</span>
-                </div>
-                <div>
-                  <h4 class="font-bold text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Email</h4>
-                  <p style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">info@giobi.com</p>
+                <div class="min-w-0 flex-1">
+                  <h4 class="font-bold text-base sm:text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Indirizzo</h4>
+                  <p class="text-sm sm:text-base" style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">via 42 Martiri 165<br>Verbania 28924 VB</p>
                 </div>
               </div>
               
-              <div class="flex items-start space-x-6">
-                <div class="w-16 h-16 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-orange-brown);">
-                  <span style="color: var(--color-orange-brown);" class="text-2xl">⏰</span>
+              <div class="flex items-start space-x-4 sm:space-x-6">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 glass-effect rounded-lg flex items-center justify-center flex-shrink-0" style="border: 1px solid var(--color-purple-blue);">
+                  <img src="/giobicom25/sprites/energy-email.svg" alt="Email" class="w-8 h-8 sm:w-10 sm:h-10 opacity-80" />
                 </div>
-                <div>
-                  <h4 class="font-bold text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Orari di Lavoro</h4>
-                  <p style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">Lun - Ven: 9:00 - 18:00</p>
+                <div class="min-w-0 flex-1">
+                  <h4 class="font-bold text-base sm:text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Email</h4>
+                  <p class="text-sm sm:text-base" style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">info@giobi.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4 sm:space-x-6">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 glass-effect rounded-lg flex items-center justify-center flex-shrink-0" style="border: 1px solid var(--color-orange-brown);">
+                  <img src="/giobicom25/sprites/power-clock.svg" alt="Orari di Lavoro" class="w-8 h-8 sm:w-10 sm:h-10 opacity-80" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="font-bold text-base sm:text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Orari di Lavoro</h4>
+                  <p class="text-sm sm:text-base" style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">Lun - Ven: 9:00 - 18:00</p>
                 </div>
               </div>
           </div>
           
           <!-- Map placeholder -->
-          <div class="glass-effect p-8 rounded-xl text-center neon-glow">
-            <div class="text-6xl mb-4">🗺️</div>
-            <p class="uppercase tracking-wider text-lg mb-4" style="color: var(--color-teal-blue); font-family: 'Orbitron', monospace;">Mappa interattiva</p>
-            <p class="text-sm mt-3" style="color: rgba(238, 238, 238, 0.7); font-family: 'Poppins', sans-serif;">
+          <div class="glass-effect p-6 sm:p-8 rounded-xl text-center neon-glow">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 p-2 sm:p-3 glass-effect rounded-full" style="border: 1px solid var(--color-golden-yellow);">
+              <img src="/giobicom25/sprites/special-map.svg" alt="Mappa" class="w-full h-full opacity-80" />
+            </div>
+            <p class="uppercase tracking-wider text-base sm:text-lg mb-4" style="color: var(--color-teal-blue); font-family: 'Orbitron', monospace;">Mappa interattiva</p>
+            <p class="text-xs sm:text-sm mt-3" style="color: rgba(238, 238, 238, 0.7); font-family: 'Poppins', sans-serif;">
               [ Inserire qui integrazione Google Maps ]
             </p>
           </div>
         </div>
         
         <!-- Contact Form -->
-        <div class="glass-effect p-10 rounded-xl neon-glow">
-          <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Invia un Messaggio</h3>
+        <div class="glass-effect p-6 sm:p-10 rounded-xl neon-glow">
+          <h3 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Invia un Messaggio</h3>
           
           <!-- Form will be integrated with Formspree or similar service -->
-          <form class="space-y-8" id="contact-form">
+          <form class="space-y-6 sm:space-y-8" id="contact-form">
             <div>
               <label for="name" class="block text-sm font-bold mb-3 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">
                 Nome *
@@ -374,7 +382,7 @@ const stats = [
                 id="name"
                 name="name"
                 required
-                class="w-full px-6 py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105"
+                class="w-full px-4 sm:px-6 py-3 sm:py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105 text-sm sm:text-base"
                 style="border-color: var(--color-teal-blue); color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; background: rgba(26, 26, 46, 0.5);"
                 placeholder="Il tuo nome"
               />
@@ -389,7 +397,7 @@ const stats = [
                 id="email"
                 name="email"
                 required
-                class="w-full px-6 py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105"
+                class="w-full px-4 sm:px-6 py-3 sm:py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105 text-sm sm:text-base"
                 style="border-color: var(--color-teal-blue); color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; background: rgba(26, 26, 46, 0.5);"
                 placeholder="La tua email"
               />
@@ -403,7 +411,7 @@ const stats = [
                 type="text"
                 id="subject"
                 name="subject"
-                class="w-full px-6 py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105"
+                class="w-full px-4 sm:px-6 py-3 sm:py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105 text-sm sm:text-base"
                 style="border-color: var(--color-teal-blue); color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; background: rgba(26, 26, 46, 0.5);"
                 placeholder="Oggetto del messaggio"
               />
@@ -418,7 +426,7 @@ const stats = [
                 name="message"
                 rows="6"
                 required
-                class="w-full px-6 py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105 resize-none"
+                class="w-full px-4 sm:px-6 py-3 sm:py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105 resize-none text-sm sm:text-base"
                 style="border-color: var(--color-teal-blue); color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; background: rgba(26, 26, 46, 0.5);"
                 placeholder="Descrivi il tuo progetto..."
               ></textarea>
@@ -441,7 +449,7 @@ const stats = [
             
             <button
               type="submit"
-              class="w-full btn-primary py-5 text-lg"
+              class="w-full btn-primary py-4 sm:py-5 text-base sm:text-lg"
             >
               INVIA MESSAGGIO
             </button>

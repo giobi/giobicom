@@ -10,7 +10,8 @@ Gestiamo ogni progetto con la massima cura, dalla singola landing page ai gestio
 
 - **Single Page Application (SPA)**: Esperienza utente fluida e reattiva
 - **Performance Elevate**: Ottimizzato per Core Web Vitals e velocità di caricamento
-- **Design Responsivo**: Ottimizzazione mobile-first per oltre il 50% del traffico mobile
+- **Design Responsivo**: Ottimizzazione mobile-first per oltre il 50% del traffico mobile con layout migliorato
+- **Fighting Game Sprites**: Sistema di icone personalizzate ispirate al mondo dei picchiaduro
 - **Tecnologie in Evoluzione**: WordPress e Laravel con codice sviluppato ad hoc
 - **Hosting Dedicato**: Server ottimizzati per massime performance
 - **Integrazione AI**: Logica di processing per GitHub Copilot e automazioni intelligenti
@@ -63,6 +64,32 @@ giobicom25/
 ├── home-2024.html          # Homepage legacy per riferimento
 └── README.md               # Documentazione principale
 ```
+
+## 🎮 Fighting Game Theme
+
+Il sito web implementa un tema visivo ispirato ai giochi di combattimento anni '80 e '90:
+
+### Sprite Custom
+Tutti i sprites sono stati creati appositamente con stile fighting game:
+- **Fist Location**: Location marker con pugno da impatto e effetti
+- **Energy Email**: Email con onde energetiche e scintille
+- **Power Clock**: Orologio con aura power-up e anelli energetici
+- **Special Map**: Mappa mondiale con effetti mossa speciale
+- **Thunder Power**: Fulmine con effetti di potenza per l'innovazione
+
+### Palette Colori Fighting Game
+- `--color-purple-blue: #4a508e` - Blu violaceo per elementi primari
+- `--color-teal-blue: #479dc0` - Azzurro per elementi interattivi
+- `--color-golden-yellow: #d99449` - Oro per evidenziazioni
+- `--color-orange-brown: #be6a3b` - Arancio per contrasti
+- `--color-red: #dc2626` - Rosso per elementi di energia
+
+### Effetti Visivi
+- Glass effect per elementi UI
+- Neon glow per evidenziazioni
+- Gradient text per titoli
+- Hover scale per interazioni
+- Particle effects per sfondi dinamici
 
 ## 🔧 Servizi Specializzati
 
@@ -253,10 +280,18 @@ Template prompt ottimizzati per:
 - Partnership tecnologiche con leader di settore
 
 **Tecnologie e Risorse:**
-- Icone: [Elpis Icons](https://www.iconfinder.com/iconsets/elpis)
+- Icone: Fighting Game Style Sprites - Custom SVG sprites ispirati al mondo dei picchiaduro
 - Font: Google Fonts ottimizzati per performance
 - Images: Ottimizzazione automatica con lazy loading
 - CDN: Distribuzione globale per massima velocità
+
+**Sprite Fighting Game Style:**
+- `fist-location.svg` - Icona location con pugno e impatto
+- `energy-email.svg` - Email con effetti energetici
+- `power-clock.svg` - Orologio con aura power-up
+- `special-map.svg` - Mappa con effetto mossa speciale
+- `thunder-power.svg` - Fulmine per innovazione continua
+- `rocket.svg`, `lightning.svg`, `cart.svg`, `bulb.svg`, `target.svg` - Sprites esistenti per servizi
 
 ---
 

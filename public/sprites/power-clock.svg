@@ -1,0 +1,63 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fighting game style clock with power-up effect -->
+  <defs>
+    <radialGradient id="clockGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#d99449;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#479dc0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a508e;stop-opacity:1" />
+    </radialGradient>
+    <filter id="powerGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Power-up energy rings -->
+  <g filter="url(#powerGlow)" opacity="0.6">
+    <circle cx="32" cy="32" r="28" fill="none" stroke="#d99449" stroke-width="1" stroke-dasharray="4,4"/>
+    <circle cx="32" cy="32" r="24" fill="none" stroke="#479dc0" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Main clock -->
+  <g filter="url(#powerGlow)">
+    <!-- Clock face -->
+    <circle cx="32" cy="32" r="20" fill="url(#clockGrad)" stroke="#be6a3b" stroke-width="3"/>
+    
+    <!-- Hour markers with fighting game style -->
+    <g stroke="#be6a3b" stroke-width="2" stroke-linecap="round">
+      <!-- 12, 3, 6, 9 o'clock as larger markers -->
+      <line x1="32" y1="14" x2="32" y2="18"/>
+      <line x1="50" y1="32" x2="46" y2="32"/>
+      <line x1="32" y1="50" x2="32" y2="46"/>
+      <line x1="14" y1="32" x2="18" y2="32"/>
+      
+      <!-- Other hour markers -->
+      <circle cx="39" cy="19" r="1" fill="#be6a3b"/>
+      <circle cx="45" cy="25" r="1" fill="#be6a3b"/>
+      <circle cx="45" cy="39" r="1" fill="#be6a3b"/>
+      <circle cx="39" cy="45" r="1" fill="#be6a3b"/>
+      <circle cx="25" cy="45" r="1" fill="#be6a3b"/>
+      <circle cx="19" cy="39" r="1" fill="#be6a3b"/>
+      <circle cx="19" cy="25" r="1" fill="#be6a3b"/>
+      <circle cx="25" cy="19" r="1" fill="#be6a3b"/>
+    </g>
+    
+    <!-- Clock hands -->
+    <line x1="32" y1="32" x2="32" y2="22" stroke="#be6a3b" stroke-width="3" stroke-linecap="round"/>
+    <line x1="32" y1="32" x2="40" y2="32" stroke="#be6a3b" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Center dot -->
+    <circle cx="32" cy="32" r="2" fill="#be6a3b"/>
+  </g>
+  
+  <!-- Power-up sparks -->
+  <g fill="#d99449">
+    <path d="M8 16 L12 20 L8 24 L4 20 Z"/>
+    <path d="M56 12 L60 16 L56 20 L52 16 Z"/>
+    <path d="M60 48 L56 44 L60 40 L64 44 Z"/>
+    <path d="M4 44 L8 40 L12 44 L8 48 Z"/>
+  </g>
+</svg>
