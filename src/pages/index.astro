@@ -70,113 +70,99 @@ const stats = [
   <Header slot="header" />
   
   <!-- Hero Section -->
-  <section class="bg-black section-padding border-b border-green-400">
+  <section class="bg-black border-b border-green-400 py-24 md:py-32">
     <div class="container-custom">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="animate-fade-in">
-          <h1 class="mb-6 text-balance">
-            <span class="gradient-text">[ SVILUPPO WEB ]</span><br>
-            <span class="text-green-400">&&</span> APPLICAZIONI LARAVEL
-          </h1>
-          <p class="text-xl text-green-500 mb-8 leading-relaxed font-mono">
-            Dal <strong class="text-green-300">2008</strong> creiamo soluzioni web innovative con WordPress e Laravel.<br>
-            <span class="text-green-400">></span> Trasformiamo le tue idee in applicazioni web performanti e scalabili.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#contatti" class="btn-primary">
-              RICHIEDI PREVENTIVO GRATUITO
-            </a>
-            <a href="#chi-siamo" class="btn-outline">
-              SCOPRI CHI SIAMO
-            </a>
+      <div class="text-center">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-green-300 mb-16 tracking-wider">
+          Starting a new journey
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Cards Section -->
+  <section class="py-16 md:py-24 bg-black border-b border-green-400">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Call Card -->
+        <div class="retro-border bg-black p-8 text-center hover:shadow-xl transition-shadow duration-300">
+          <div class="mb-6">
+            <h3 class="text-lg font-bold text-green-400 uppercase tracking-wider mb-2">
+              GIVE US A CALL
+            </h3>
+            <span class="text-xs text-green-300 font-mono">COPIED [D]</span>
           </div>
-          
-          <!-- Stats -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-green-400">
-            {stats.map((stat) => (
-              <div class="text-center retro-border p-4 bg-black">
-                <div class="text-2xl font-bold text-green-300">{stat.number}</div>
-                <div class="text-sm text-green-500 uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
+          <div class="text-2xl font-bold text-green-300 font-mono">
+            +39 324 123 4567
           </div>
         </div>
-        
-        <div class="animate-slide-up">
-          <div class="relative">
-            <div class="retro-border bg-black p-8">
-              <div class="space-y-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span class="text-green-400 font-mono text-sm">giobi.com:~$</span>
-                </div>
-                <div class="font-mono text-sm text-green-400">
-                  <div class="text-green-500">// giobi.com</div>
-                  <div class="mt-2">
-                    <span class="text-green-300">class</span>
-                    <span class="text-green-400"> WebDeveloper</span>
-                    <span class="text-green-400"> {</span>
-                  </div>
-                  <div class="ml-4 mt-1">
-                    <span class="text-green-500">experience</span>
-                    <span class="text-green-400">: </span>
-                    <span class="text-yellow-400">'15+ years'</span>
-                    <span class="text-green-400">;</span>
-                  </div>
-                  <div class="ml-4">
-                    <span class="text-green-500">technologies</span>
-                    <span class="text-green-400">: [</span>
-                    <span class="text-yellow-400">'Laravel', 'WordPress'</span>
-                    <span class="text-green-400">];</span>
-                  </div>
-                  <div class="ml-4">
-                    <span class="text-green-500">location</span>
-                    <span class="text-green-400">: </span>
-                    <span class="text-yellow-400">'Verbania, Italy'</span>
-                    <span class="text-green-400">;</span>
-                  </div>
-                  <div class="text-green-400">}</div>
-                  <div class="mt-2 text-green-500">$_> Ready to code...</div>
-                </div>
-              </div>
-            </div>
+
+        <!-- Email Card -->
+        <div class="retro-border bg-black p-8 text-center hover:shadow-xl transition-shadow duration-300">
+          <div class="mb-6">
+            <h3 class="text-lg font-bold text-green-400 uppercase tracking-wider mb-2">
+              SEND A LOVE LETTER
+            </h3>
+            <span class="text-xs text-green-300 font-mono">COPIED [D]</span>
+          </div>
+          <div class="text-xl font-bold text-green-300 font-mono">
+            info@giobi.com
+          </div>
+        </div>
+
+        <!-- Consultation Card -->
+        <div class="retro-border bg-black p-8 text-center hover:shadow-xl transition-shadow duration-300">
+          <div class="mb-6">
+            <h3 class="text-lg font-bold text-green-400 uppercase tracking-wider mb-2">
+              BOOK A CALL
+            </h3>
+            <span class="text-xs text-green-300 font-mono">COPIED [D]</span>
+          </div>
+          <div class="text-sm text-green-500 font-mono leading-relaxed">
+            Get a detailed consultation with our<br>
+            expert for free.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="servizi" class="section-padding bg-black border-b border-green-400">
+  <!-- Call to Action Card -->
+  <section class="py-16 md:py-24 bg-black border-b border-green-400">
     <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="mb-6">I NOSTRI <span class="gradient-text">[ SERVIZI ]</span></h2>
-        <p class="text-xl text-green-500 max-w-3xl mx-auto font-mono">
-          Offriamo soluzioni complete per il tuo business digitale,<br>
-          <span class="text-green-400">></span> dalla progettazione allo sviluppo fino alla manutenzione.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {services.map((service, index) => (
-          <div class="card p-6 hover:scale-105 transition-transform duration-300" style={`animation-delay: ${index * 0.1}s`}>
-            <div class="w-16 h-16 mb-4">
-              <img src={service.sprite} alt={service.title} class="w-full h-full" />
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-green-300 uppercase tracking-wider">{service.title}</h3>
-            <p class="text-green-500 mb-4 font-mono text-sm">{service.description}</p>
-            <ul class="space-y-1">
-              {service.features.map((feature) => (
-                <li class="flex items-center text-sm text-green-400 font-mono">
-                  <span class="text-green-300 mr-2">></span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
+      <div class="max-w-5xl mx-auto">
+        <div class="retro-border bg-black p-12 md:p-16 text-center relative">
+          <!-- Grid pattern background -->
+          <div class="absolute inset-0 opacity-10">
+            <div class="w-full h-full" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(34, 197, 94, 0.1) 20px, rgba(34, 197, 94, 0.1) 21px), repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(34, 197, 94, 0.1) 20px, rgba(34, 197, 94, 0.1) 21px)"></div>
           </div>
-        ))}
+          
+          <div class="relative">
+            <h2 class="text-4xl md:text-5xl font-bold text-green-300 mb-8">
+              Want to build something?
+            </h2>
+            <p class="text-green-500 font-mono mb-10 max-w-2xl mx-auto text-lg">
+              Dal 2008 sviluppiamo soluzioni web innovative con WordPress e Laravel. 
+              Trasformiamo le tue idee in applicazioni web performanti.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+              <a href="mailto:info@giobi.com" class="btn-primary px-8 py-4 text-lg">
+                BOOK A CALL
+              </a>
+              <a href="mailto:info@giobi.com" class="btn-outline px-8 py-4 text-lg">
+                CONTACT US
+              </a>
+            </div>
+          </div>
+          
+          <!-- Decorative phone icon -->
+          <div class="absolute bottom-6 right-6 opacity-20">
+            <div class="w-20 h-20 retro-border bg-black flex items-center justify-center">
+              <span class="text-green-400 text-3xl">📱</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -219,223 +205,8 @@ const stats = [
   </section>
   -->
 
-  <!-- About Section -->
-  <section id="chi-siamo" class="section-padding bg-black border-b border-green-400">
-    <div class="container-custom">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="mb-6">CHI <span class="gradient-text">[ SIAMO ]</span></h2>
-          <p class="text-lg text-green-500 mb-6 leading-relaxed font-mono">
-            <strong class="text-green-300">giobi.com</strong> è un team di sviluppatori specializzati in tecnologie web moderne.<br>
-            <span class="text-green-400">></span> Dal 2008 aiutiamo aziende e professionisti a digitalizzare i loro processi 
-            attraverso soluzioni web innovative e scalabili.
-          </p>
-          <div class="grid sm:grid-cols-2 gap-6 mb-8">
-            <div class="flex items-start space-x-3">
-              <div class="w-8 h-8 retro-border bg-black flex items-center justify-center mt-1">
-                <span class="text-green-400 text-sm">✓</span>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1 text-green-300 uppercase tracking-wider">Esperienza Consolidata</h4>
-                <p class="text-green-500 text-sm font-mono">Oltre 15 anni nel settore dello sviluppo web</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-3">
-              <div class="w-8 h-8 retro-border bg-black flex items-center justify-center mt-1">
-                <span class="text-green-400 text-sm">※</span>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1 text-green-300 uppercase tracking-wider">Team Specializzato</h4>
-                <p class="text-green-500 text-sm font-mono">Sviluppatori certificati Laravel e WordPress</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-3">
-              <div class="w-8 h-8 retro-border bg-black flex items-center justify-center mt-1">
-                <span class="text-green-400 text-sm">★</span>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1 text-green-300 uppercase tracking-wider">Qualità Garantita</h4>
-                <p class="text-green-500 text-sm font-mono">Codice pulito, documentato e manutenibile</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-3">
-              <div class="w-8 h-8 retro-border bg-black flex items-center justify-center mt-1">
-                <span class="text-green-400 text-sm">◆</span>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1 text-green-300 uppercase tracking-wider">Supporto Continuo</h4>
-                <p class="text-green-500 text-sm font-mono">Manutenzione e aggiornamenti post-lancio</p>
-              </div>
-            </div>
-          </div>
-          <a href="#contatti" class="btn-primary">
-            INIZIA IL TUO PROGETTO
-          </a>
-        </div>
-        
-        <div class="relative">
-          <div class="retro-border bg-black p-8">
-            <div class="text-center h-full flex flex-col justify-center">
-              <div class="w-16 h-16 mx-auto mb-4">
-                <img src="/giobicom25/sprites/target.svg" alt="Target" class="w-full h-full" />
-              </div>
-              <h3 class="text-2xl font-bold mb-4 text-green-300 uppercase tracking-wider">LA NOSTRA MISSIONE</h3>
-              <p class="text-green-500 leading-relaxed font-mono text-sm">
-                Trasformare idee innovative in soluzioni web concrete,<br>
-                <span class="text-green-400">></span> aiutando le aziende a crescere nel digitale con tecnologie all'avanguardia.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contatti" class="section-padding bg-black text-green-400">
-    <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="mb-6 text-green-300">RICHIEDI UN'<span class="text-green-400">[ ANALISI GRATUITA ]</span></h2>
-        <p class="text-xl text-green-500 max-w-3xl mx-auto font-mono">
-          Rivolgiti a un consulente con più di 15 anni di esperienza nel settore.<br>
-          <span class="text-green-400">></span> Analizziamo il tuo progetto e ti proponiamo la soluzione migliore.
-        </p>
-      </div>
-      
-      <div class="grid lg:grid-cols-2 gap-12">
-        <!-- Contact Info -->
-        <div class="space-y-8">
-          <div>
-            <h3 class="text-2xl font-bold mb-6 text-green-300 uppercase tracking-wider">Informazioni di Contatto</h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 retro-border bg-black flex items-center justify-center">
-                  <span class="text-green-400 text-lg">📍</span>
-                </div>
-                <div>
-                  <h4 class="font-bold text-lg mb-1 text-green-300 uppercase tracking-wider">Indirizzo</h4>
-                  <p class="text-green-500 font-mono">via 42 Martiri 165<br>Verbania 28924 VB</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 retro-border bg-black flex items-center justify-center">
-                  <span class="text-green-400 text-lg">📧</span>
-                </div>
-                <div>
-                  <h4 class="font-bold text-lg mb-1 text-green-300 uppercase tracking-wider">Email</h4>
-                  <p class="text-green-500 font-mono">info@giobi.com</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 retro-border bg-black flex items-center justify-center">
-                  <span class="text-green-400 text-lg">⏰</span>
-                </div>
-                <div>
-                  <h4 class="font-bold text-lg mb-1 text-green-300 uppercase tracking-wider">Orari di Lavoro</h4>
-                  <p class="text-green-500 font-mono">Lun - Ven: 9:00 - 18:00</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Map placeholder -->
-          <div class="retro-border bg-black p-6 text-center">
-            <div class="text-4xl mb-2">🗺️</div>
-            <p class="text-green-400 font-mono uppercase tracking-wider">Mappa interattiva</p>
-            <p class="text-sm text-green-500 mt-2 font-mono">
-              [ Inserire qui integrazione Google Maps ]
-            </p>
-          </div>
-        </div>
-        
-        <!-- Contact Form -->
-        <div class="retro-border bg-black p-8 text-green-400">
-          <h3 class="text-2xl font-bold mb-6 text-green-300 uppercase tracking-wider">Invia un Messaggio</h3>
-          
-          <!-- Form will be integrated with Formspree or similar service -->
-          <form class="space-y-6" id="contact-form">
-            <div>
-              <label for="name" class="block text-sm font-bold text-green-300 mb-2 uppercase tracking-wider">
-                Nome *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="w-full px-4 py-3 border-2 border-green-400 bg-black text-green-400 font-mono focus:border-green-300 focus:outline-none transition-colors"
-                placeholder="Il tuo nome"
-              />
-            </div>
-            
-            <div>
-              <label for="email" class="block text-sm font-bold text-green-300 mb-2 uppercase tracking-wider">
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="w-full px-4 py-3 border-2 border-green-400 bg-black text-green-400 font-mono focus:border-green-300 focus:outline-none transition-colors"
-                placeholder="La tua email"
-              />
-            </div>
-            
-            <div>
-              <label for="subject" class="block text-sm font-bold text-green-300 mb-2 uppercase tracking-wider">
-                Oggetto
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                class="w-full px-4 py-3 border-2 border-green-400 bg-black text-green-400 font-mono focus:border-green-300 focus:outline-none transition-colors"
-                placeholder="Oggetto del messaggio"
-              />
-            </div>
-            
-            <div>
-              <label for="message" class="block text-sm font-bold text-green-300 mb-2 uppercase tracking-wider">
-                Messaggio *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                class="w-full px-4 py-3 border-2 border-green-400 bg-black text-green-400 font-mono focus:border-green-300 focus:outline-none transition-colors resize-none"
-                placeholder="Descrivi il tuo progetto..."
-              ></textarea>
-            </div>
-            
-            <div class="flex items-start space-x-3">
-              <input
-                type="checkbox"
-                id="privacy"
-                name="privacy"
-                required
-                class="mt-1 w-5 h-5 text-green-400 border-green-400 bg-black focus:ring-green-400"
-              />
-              <label for="privacy" class="text-sm text-green-500 font-mono">
-                Accetto il trattamento dei dati personali secondo la 
-                <a href="#" class="text-green-300 hover:text-green-200">Privacy Policy</a> *
-              </label>
-            </div>
-            
-            <button
-              type="submit"
-              class="w-full btn-primary py-4 text-lg"
-            >
-              INVIA MESSAGGIO
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <Footer slot="footer" />
 </Layout>

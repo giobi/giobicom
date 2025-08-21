@@ -2,10 +2,10 @@
 import Particles from './Particles.astro';
 
 const navigation = [
-  { name: 'Home', href: '/giobicom25/' },
-  { name: 'Servizi', href: '/giobicom25/#servizi' },
-  { name: 'Chi Siamo', href: '/giobicom25/#chi-siamo' },
-  { name: 'Contatti', href: '/giobicom25/#contatti' },
+  { name: 'WHAT WE DO', href: '/giobicom25/#servizi' },
+  { name: 'CASES', href: '/giobicom25/blog' },
+  { name: 'ABOUT', href: '/giobicom25/#chi-siamo' },
+  { name: 'CONTACT', href: '/giobicom25/#contatti' },
 ];
 ---
 
@@ -16,11 +16,9 @@ const navigation = [
       <!-- Logo -->
       <div class="flex items-center space-x-3">
         <a href="/giobicom25/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-          <img 
-            src="/giobicom25/images/logo.svg" 
-            alt="Giobi.com Logo" 
-            class="h-12 w-auto"
-          />
+          <div class="text-green-300 font-bold text-xl tracking-wider">
+            giobi.com
+          </div>
         </a>
       </div>
       
@@ -35,7 +33,7 @@ const navigation = [
           </a>
         ))}
         <a href="/giobicom25/#contatti" class="btn-primary">
-          CONTATTACI
+          BOOK A CALL
         </a>
       </div>
       
