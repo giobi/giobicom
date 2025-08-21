@@ -2,19 +2,16 @@
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import { getCollection } from 'astro:content';
 import '../styles/global.css';
 
-// Placeholder for future blog posts - these would come from markdown files
-const posts = [
-  {
-    title: 'Lorem ipsum blog post',
-    slug: 'lorem-ipsum-blog-post',
-    date: '2024-01-15',
-    excerpt: 'Questo è un post di esempio per dimostrare la struttura del blog.',
-    author: 'giobi.com',
-    tags: ['Laravel', 'WordPress', 'Web Development']
-  }
-];
+// Load blog posts from markdown files
+const posts = await getCollection('blog', ({ data }) => {
+  return data.draft !== true;
+});
+
+// Sort posts by date (newest first)
+const sortedPosts = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <Layout 
@@ -33,52 +30,45 @@ const posts = [
         </p>
       </div>
       
-      <!-- Coming Soon Message -->
-      <div class="text-center mb-16">
-        <div class="retro-border bg-black p-8 max-w-2xl mx-auto">
-          <h2 class="text-2xl font-bold mb-4 text-green-300 uppercase tracking-wider">Coming Soon</h2>
-          <p class="text-green-500 font-mono mb-6">
-            Il blog è in costruzione. Presto pubblicheremo articoli tecnici su:
-          </p>
-          <ul class="space-y-2 text-green-400 font-mono text-sm">
-            <li>> Laravel: tips, tricks e best practices</li>
-            <li>> WordPress: sviluppo temi e plugin</li>
-            <li>> Performance optimization</li>
-            <li>> Modern web development</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Future blog posts structure (commented out for now) -->
-      <!--
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <article class="card p-6">
-            <div class="mb-4">
-              <h2 class="text-xl font-bold mb-2 text-green-300 uppercase tracking-wider">
-                <a href={`/giobicom25/blog/${post.slug}`} class="hover:text-green-200 transition-colors">
-                  {post.title}
-                </a>
-              </h2>
-              <div class="text-sm text-green-500 font-mono mb-2">
-                {new Date(post.date).toLocaleDateString('it-IT')} - {post.author}
+      <!-- Blog Posts -->
+      {sortedPosts.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedPosts.map((post) => (
+            <article class="retro-border bg-black p-6 hover:bg-gray-900 transition-colors">
+              <div class="mb-4">
+                <h2 class="text-xl font-bold mb-2 text-green-300 uppercase tracking-wider">
+                  <a href={`/giobicom25/blog/${post.slug}`} class="hover:text-green-200 transition-colors">
+                    {post.data.title}
+                  </a>
+                </h2>
+                <div class="text-sm text-green-500 font-mono mb-2">
+                  {post.data.date.toLocaleDateString('it-IT')} - {post.data.author}
+                </div>
               </div>
-            </div>
-            <p class="text-green-500 font-mono text-sm mb-4">{post.excerpt}</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              {post.tags.map((tag) => (
-                <span class="px-2 py-1 border border-green-400 text-green-400 text-xs font-mono uppercase">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <a href={`/giobicom25/blog/${post.slug}`} class="text-green-300 hover:text-green-200 font-mono text-sm uppercase tracking-wider">
-              > Leggi tutto
-            </a>
-          </article>
-        ))}
-      </div>
-      -->
+              <p class="text-green-500 font-mono text-sm mb-4">{post.data.description}</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                {post.data.tags.map((tag) => (
+                  <span class="px-2 py-1 border border-green-400 text-green-400 text-xs font-mono uppercase">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <a href={`/giobicom25/blog/${post.slug}`} class="text-green-300 hover:text-green-200 font-mono text-sm uppercase tracking-wider">
+                > Leggi tutto
+              </a>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center">
+          <div class="retro-border bg-black p-8 max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-green-300 uppercase tracking-wider">Nessun Post Disponibile</h2>
+            <p class="text-green-500 font-mono">
+              I post del blog verranno pubblicati presto. Seguici per rimanere aggiornato!
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   </section>
 
