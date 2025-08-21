@@ -83,16 +83,16 @@ const stats = [
     <div class="container-custom relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
-          <h1 class="mb-8 text-balance leading-tight">
+          <h1 class="mb-8 text-balance leading-tight fade-in-up">
             <span class="gradient-text block mb-4">[ SVILUPPO WEB ]</span>
             <span style="color: var(--color-teal-blue); opacity: 0.8; font-size: 0.7em; display: block; margin: 1rem 0;">&&</span> 
             <span class="block">APPLICAZIONI LARAVEL</span>
           </h1>
-          <p class="text-xl leading-relaxed mb-8" style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; max-width: 600px;">
+          <p class="text-xl leading-relaxed mb-8 fade-in-up stagger-1" style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; max-width: 600px;">
             Dal <strong style="color: var(--color-golden-yellow);">2008</strong> creiamo soluzioni web innovative con WordPress e Laravel.<br>
             <span style="color: var(--color-teal-blue); font-weight: 600;">></span> Trasformiamo le tue idee in applicazioni web performanti e scalabili.
           </p>
-          <div class="flex flex-col sm:flex-row gap-6">
+          <div class="flex flex-col sm:flex-row gap-6 fade-in-up stagger-2">
             <a href="#contatti" class="btn-primary">
               RICHIEDI PREVENTIVO GRATUITO
             </a>
@@ -102,8 +102,8 @@ const stats = [
           </div>
           
           <!-- Stats -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8" style="border-top: 2px solid var(--color-purple-blue);">
-            {stats.map((stat) => (
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 fade-in-up stagger-3" style="border-top: 2px solid var(--color-purple-blue);">
+            {stats.map((stat, index) => (
               <div class="text-center glass-effect p-6 rounded-lg transition-all duration-300 hover:scale-105" style="border: 1px solid var(--color-purple-blue);">
                 <div class="text-3xl font-bold mb-2 gradient-text" style="font-family: 'Orbitron', monospace;">{stat.number}</div>
                 <div class="text-sm uppercase tracking-wider" style="color: rgba(238, 238, 238, 0.8); font-family: 'Poppins', sans-serif;">{stat.label}</div>
@@ -112,8 +112,8 @@ const stats = [
           </div>
         </div>
         
-        <div class="lg:pl-8">
-          <div class="relative">
+        <div class="lg:pl-8 fade-in-up stagger-4">
+          <div class="relative floating">
             <div class="glass-effect p-8 rounded-xl neon-glow">
               <div class="space-y-6">
                 <div class="flex items-center space-x-4">
@@ -230,51 +230,51 @@ const stats = [
   -->
 
   <!-- About Section -->
-  <section id="chi-siamo" class="section-padding bg-black border-b border-green-400">
+  <section id="chi-siamo" class="section-padding border-b-2 border-purple-blue">
     <div class="container-custom">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="mb-6">CHI <span class="gradient-text">[ SIAMO ]</span></h2>
-          <p class="text-lg text-green-500 mb-6 leading-relaxed font-mono">
-            <strong class="text-green-300">giobi.com</strong> è un team di sviluppatori specializzati in tecnologie web moderne.<br>
-            <span class="text-green-400">></span> Dal 2008 aiutiamo aziende e professionisti a digitalizzare i loro processi 
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+          <h2 class="mb-8">CHI <span class="gradient-text">[ SIAMO ]</span></h2>
+          <p class="text-xl leading-relaxed mb-8" style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">
+            <strong style="color: var(--color-golden-yellow);">giobi.com</strong> è un team di sviluppatori specializzati in tecnologie web moderne.<br>
+            <span style="color: var(--color-teal-blue); font-weight: 600;">></span> Dal 2008 aiutiamo aziende e professionisti a digitalizzare i loro processi 
             attraverso soluzioni web innovative e scalabili.
           </p>
-          <div class="grid sm:grid-cols-2 gap-6 mb-8">
-            <div class="flex items-start space-x-3">
-              <div class="w-8 h-8 retro-border bg-black flex items-center justify-center mt-1">
-                <span class="text-green-400 text-sm">✓</span>
+          <div class="grid sm:grid-cols-2 gap-8 mb-10">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-teal-blue);">
+                <span style="color: var(--color-teal-blue);" class="text-lg">✓</span>
               </div>
               <div>
-                <h4 class="font-bold mb-1 text-green-300 uppercase tracking-wider">Esperienza Consolidata</h4>
-                <p class="text-green-500 text-sm font-mono">Oltre 15 anni nel settore dello sviluppo web</p>
+                <h4 class="font-bold mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Esperienza Consolidata</h4>
+                <p class="text-sm leading-relaxed" style="color: rgba(238, 238, 238, 0.8); font-family: 'Poppins', sans-serif;">Oltre 15 anni nel settore dello sviluppo web</p>
               </div>
             </div>
-            <div class="flex items-start space-x-3">
-              <div class="w-8 h-8 retro-border bg-black flex items-center justify-center mt-1">
-                <span class="text-green-400 text-sm">※</span>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-purple-blue);">
+                <span style="color: var(--color-purple-blue);" class="text-lg">※</span>
               </div>
               <div>
-                <h4 class="font-bold mb-1 text-green-300 uppercase tracking-wider">Team Specializzato</h4>
-                <p class="text-green-500 text-sm font-mono">Sviluppatori certificati Laravel e WordPress</p>
+                <h4 class="font-bold mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Team Specializzato</h4>
+                <p class="text-sm leading-relaxed" style="color: rgba(238, 238, 238, 0.8); font-family: 'Poppins', sans-serif;">Sviluppatori certificati Laravel e WordPress</p>
               </div>
             </div>
-            <div class="flex items-start space-x-3">
-              <div class="w-8 h-8 retro-border bg-black flex items-center justify-center mt-1">
-                <span class="text-green-400 text-sm">★</span>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-orange-brown);">
+                <span style="color: var(--color-orange-brown);" class="text-lg">★</span>
               </div>
               <div>
-                <h4 class="font-bold mb-1 text-green-300 uppercase tracking-wider">Qualità Garantita</h4>
-                <p class="text-green-500 text-sm font-mono">Codice pulito, documentato e manutenibile</p>
+                <h4 class="font-bold mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Qualità Garantita</h4>
+                <p class="text-sm leading-relaxed" style="color: rgba(238, 238, 238, 0.8); font-family: 'Poppins', sans-serif;">Codice pulito, documentato e manutenibile</p>
               </div>
             </div>
-            <div class="flex items-start space-x-3">
-              <div class="w-8 h-8 retro-border bg-black flex items-center justify-center mt-1">
-                <span class="text-green-400 text-sm">◆</span>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-red);">
+                <span style="color: var(--color-red);" class="text-lg">◆</span>
               </div>
               <div>
-                <h4 class="font-bold mb-1 text-green-300 uppercase tracking-wider">Supporto Continuo</h4>
-                <p class="text-green-500 text-sm font-mono">Manutenzione e aggiornamenti post-lancio</p>
+                <h4 class="font-bold mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Supporto Continuo</h4>
+                <p class="text-sm leading-relaxed" style="color: rgba(238, 238, 238, 0.8); font-family: 'Poppins', sans-serif;">Manutenzione e aggiornamenti post-lancio</p>
               </div>
             </div>
           </div>
@@ -284,15 +284,15 @@ const stats = [
         </div>
         
         <div class="relative">
-          <div class="retro-border bg-black p-8">
-            <div class="text-center h-full flex flex-col justify-center">
-              <div class="w-16 h-16 mx-auto mb-4">
-                <img src="/giobicom25/sprites/target.svg" alt="Target" class="w-full h-full" />
+          <div class="glass-effect p-10 rounded-xl neon-glow">
+            <div class="text-center h-full flex flex-col justify-center space-y-6">
+              <div class="w-20 h-20 mx-auto mb-4 p-4 glass-effect rounded-full" style="border: 1px solid var(--color-golden-yellow);">
+                <img src="/giobicom25/sprites/target.svg" alt="Target" class="w-full h-full opacity-80" />
               </div>
-              <h3 class="text-2xl font-bold mb-4 text-green-300 uppercase tracking-wider">LA NOSTRA MISSIONE</h3>
-              <p class="text-green-500 leading-relaxed font-mono text-sm">
+              <h3 class="text-2xl font-bold uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">LA NOSTRA MISSIONE</h3>
+              <p class="leading-relaxed text-lg" style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">
                 Trasformare idee innovative in soluzioni web concrete,<br>
-                <span class="text-green-400">></span> aiutando le aziende a crescere nel digitale con tecnologie all'avanguardia.
+                <span style="color: var(--color-teal-blue); font-weight: 600;">></span> aiutando le aziende a crescere nel digitale con tecnologie all'avanguardia.
               </p>
             </div>
           </div>
@@ -302,72 +302,71 @@ const stats = [
   </section>
 
   <!-- Contact Section -->
-  <section id="contatti" class="section-padding bg-black text-green-400">
+  <section id="contatti" class="section-padding">
     <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="mb-6 text-green-300">RICHIEDI UN'<span class="text-green-400">[ ANALISI GRATUITA ]</span></h2>
-        <p class="text-xl text-green-500 max-w-3xl mx-auto font-mono">
+      <div class="text-center mb-20">
+        <h2 class="mb-8">RICHIEDI UN'<span class="gradient-text">[ ANALISI GRATUITA ]</span></h2>
+        <p class="text-xl max-w-4xl mx-auto leading-relaxed" style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">
           Rivolgiti a un consulente con più di 15 anni di esperienza nel settore.<br>
-          <span class="text-green-400">></span> Analizziamo il tuo progetto e ti proponiamo la soluzione migliore.
+          <span style="color: var(--color-teal-blue); font-weight: 600;">></span> Analizziamo il tuo progetto e ti proponiamo la soluzione migliore.
         </p>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-12">
+      <div class="grid lg:grid-cols-2 gap-16">
         <!-- Contact Info -->
-        <div class="space-y-8">
+        <div class="space-y-10">
           <div>
-            <h3 class="text-2xl font-bold mb-6 text-green-300 uppercase tracking-wider">Informazioni di Contatto</h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 retro-border bg-black flex items-center justify-center">
-                  <span class="text-green-400 text-lg">📍</span>
+            <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Informazioni di Contatto</h3>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-6">
+                <div class="w-16 h-16 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-teal-blue);">
+                  <span style="color: var(--color-teal-blue);" class="text-2xl">📍</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-lg mb-1 text-green-300 uppercase tracking-wider">Indirizzo</h4>
-                  <p class="text-green-500 font-mono">via 42 Martiri 165<br>Verbania 28924 VB</p>
+                  <h4 class="font-bold text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Indirizzo</h4>
+                  <p style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">via 42 Martiri 165<br>Verbania 28924 VB</p>
                 </div>
               </div>
               
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 retro-border bg-black flex items-center justify-center">
-                  <span class="text-green-400 text-lg">📧</span>
+              <div class="flex items-start space-x-6">
+                <div class="w-16 h-16 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-purple-blue);">
+                  <span style="color: var(--color-purple-blue);" class="text-2xl">📧</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-lg mb-1 text-green-300 uppercase tracking-wider">Email</h4>
-                  <p class="text-green-500 font-mono">info@giobi.com</p>
+                  <h4 class="font-bold text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Email</h4>
+                  <p style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">info@giobi.com</p>
                 </div>
               </div>
               
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 retro-border bg-black flex items-center justify-center">
-                  <span class="text-green-400 text-lg">⏰</span>
+              <div class="flex items-start space-x-6">
+                <div class="w-16 h-16 glass-effect rounded-lg flex items-center justify-center" style="border: 1px solid var(--color-orange-brown);">
+                  <span style="color: var(--color-orange-brown);" class="text-2xl">⏰</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-lg mb-1 text-green-300 uppercase tracking-wider">Orari di Lavoro</h4>
-                  <p class="text-green-500 font-mono">Lun - Ven: 9:00 - 18:00</p>
+                  <h4 class="font-bold text-lg mb-2 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Orari di Lavoro</h4>
+                  <p style="color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif;">Lun - Ven: 9:00 - 18:00</p>
                 </div>
               </div>
-            </div>
           </div>
           
           <!-- Map placeholder -->
-          <div class="retro-border bg-black p-6 text-center">
-            <div class="text-4xl mb-2">🗺️</div>
-            <p class="text-green-400 font-mono uppercase tracking-wider">Mappa interattiva</p>
-            <p class="text-sm text-green-500 mt-2 font-mono">
+          <div class="glass-effect p-8 rounded-xl text-center neon-glow">
+            <div class="text-6xl mb-4">🗺️</div>
+            <p class="uppercase tracking-wider text-lg mb-4" style="color: var(--color-teal-blue); font-family: 'Orbitron', monospace;">Mappa interattiva</p>
+            <p class="text-sm mt-3" style="color: rgba(238, 238, 238, 0.7); font-family: 'Poppins', sans-serif;">
               [ Inserire qui integrazione Google Maps ]
             </p>
           </div>
         </div>
         
         <!-- Contact Form -->
-        <div class="retro-border bg-black p-8 text-green-400">
-          <h3 class="text-2xl font-bold mb-6 text-green-300 uppercase tracking-wider">Invia un Messaggio</h3>
+        <div class="glass-effect p-10 rounded-xl neon-glow">
+          <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">Invia un Messaggio</h3>
           
           <!-- Form will be integrated with Formspree or similar service -->
-          <form class="space-y-6" id="contact-form">
+          <form class="space-y-8" id="contact-form">
             <div>
-              <label for="name" class="block text-sm font-bold text-green-300 mb-2 uppercase tracking-wider">
+              <label for="name" class="block text-sm font-bold mb-3 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">
                 Nome *
               </label>
               <input
@@ -375,13 +374,14 @@ const stats = [
                 id="name"
                 name="name"
                 required
-                class="w-full px-4 py-3 border-2 border-green-400 bg-black text-green-400 font-mono focus:border-green-300 focus:outline-none transition-colors"
+                class="w-full px-6 py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105"
+                style="border-color: var(--color-teal-blue); color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; background: rgba(26, 26, 46, 0.5);"
                 placeholder="Il tuo nome"
               />
             </div>
             
             <div>
-              <label for="email" class="block text-sm font-bold text-green-300 mb-2 uppercase tracking-wider">
+              <label for="email" class="block text-sm font-bold mb-3 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">
                 Email *
               </label>
               <input
@@ -389,55 +389,59 @@ const stats = [
                 id="email"
                 name="email"
                 required
-                class="w-full px-4 py-3 border-2 border-green-400 bg-black text-green-400 font-mono focus:border-green-300 focus:outline-none transition-colors"
+                class="w-full px-6 py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105"
+                style="border-color: var(--color-teal-blue); color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; background: rgba(26, 26, 46, 0.5);"
                 placeholder="La tua email"
               />
             </div>
             
             <div>
-              <label for="subject" class="block text-sm font-bold text-green-300 mb-2 uppercase tracking-wider">
+              <label for="subject" class="block text-sm font-bold mb-3 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">
                 Oggetto
               </label>
               <input
                 type="text"
                 id="subject"
                 name="subject"
-                class="w-full px-4 py-3 border-2 border-green-400 bg-black text-green-400 font-mono focus:border-green-300 focus:outline-none transition-colors"
+                class="w-full px-6 py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105"
+                style="border-color: var(--color-teal-blue); color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; background: rgba(26, 26, 46, 0.5);"
                 placeholder="Oggetto del messaggio"
               />
             </div>
             
             <div>
-              <label for="message" class="block text-sm font-bold text-green-300 mb-2 uppercase tracking-wider">
+              <label for="message" class="block text-sm font-bold mb-3 uppercase tracking-wider" style="color: var(--color-golden-yellow); font-family: 'Orbitron', monospace;">
                 Messaggio *
               </label>
               <textarea
                 id="message"
                 name="message"
-                rows="5"
+                rows="6"
                 required
-                class="w-full px-4 py-3 border-2 border-green-400 bg-black text-green-400 font-mono focus:border-green-300 focus:outline-none transition-colors resize-none"
+                class="w-full px-6 py-4 border-2 rounded-lg glass-effect transition-all duration-300 focus:outline-none focus:scale-105 resize-none"
+                style="border-color: var(--color-teal-blue); color: rgba(238, 238, 238, 0.9); font-family: 'Poppins', sans-serif; background: rgba(26, 26, 46, 0.5);"
                 placeholder="Descrivi il tuo progetto..."
               ></textarea>
             </div>
             
-            <div class="flex items-start space-x-3">
+            <div class="flex items-start space-x-4">
               <input
                 type="checkbox"
                 id="privacy"
                 name="privacy"
                 required
-                class="mt-1 w-5 h-5 text-green-400 border-green-400 bg-black focus:ring-green-400"
+                class="mt-2 w-6 h-6 rounded transition-all duration-300"
+                style="accent-color: var(--color-teal-blue);"
               />
-              <label for="privacy" class="text-sm text-green-500 font-mono">
+              <label for="privacy" class="text-sm leading-relaxed" style="color: rgba(238, 238, 238, 0.8); font-family: 'Poppins', sans-serif;">
                 Accetto il trattamento dei dati personali secondo la 
-                <a href="#" class="text-green-300 hover:text-green-200">Privacy Policy</a> *
+                <a href="#" class="transition-colors duration-300 hover:opacity-80" style="color: var(--color-teal-blue);">Privacy Policy</a> *
               </label>
             </div>
             
             <button
               type="submit"
-              class="w-full btn-primary py-4 text-lg"
+              class="w-full btn-primary py-5 text-lg"
             >
               INVIA MESSAGGIO
             </button>
