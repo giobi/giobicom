@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* 80s Color Palette */
-  --color-purple-blue: #4a508e;
-  --color-teal-blue: #479dc0;
-  --color-golden-yellow: #d99449;
-  --color-orange-brown: #be6a3b;
+  /* Creative & Modern Color Palette */
+  --color-purple-blue: #1B1B3A;  /* Navy Blue */
+  --color-teal-blue: #3ABEF9;    /* Azure */
+  --color-golden-yellow: #FFD369; /* Warm Yellow */
+  --color-orange-brown: #2F2F2F;  /* Graphite Gray */
   --color-red: #bf393e;
-  --color-dark: #1a1a2e;
-  --color-light: #eee;
+  --color-dark: #1B1B3A;         /* Navy Blue for dark backgrounds */
+  --color-light: #FAFAFA;        /* Clean white */
 }
 
 @layer base {
@@ -23,13 +23,13 @@
   
   body {
     @apply font-sans;
-    background: linear-gradient(135deg, var(--color-dark) 0%, #16213e 25%, #0f3460 50%, #16213e 75%, var(--color-dark) 100%);
+    background: linear-gradient(135deg, var(--color-dark) 0%, #2A2A4A 25%, #1E3A5F 50%, #2A2A4A 75%, var(--color-dark) 100%);
     background-image: 
-      radial-gradient(circle at 20% 20%, rgba(74, 80, 142, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(71, 157, 192, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 40% 60%, rgba(217, 148, 73, 0.06) 0%, transparent 50%),
-      linear-gradient(rgba(74, 80, 142, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(71, 157, 192, 0.02) 1px, transparent 1px);
+      radial-gradient(circle at 20% 20%, rgba(27, 27, 58, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(58, 190, 249, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgba(255, 211, 105, 0.06) 0%, transparent 50%),
+      linear-gradient(rgba(27, 27, 58, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(58, 190, 249, 0.02) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px;
     min-height: 100vh;
     color: var(--color-light);
@@ -37,7 +37,7 @@
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold leading-tight;
-    font-family: 'Orbitron', 'Poppins', monospace;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
     background: linear-gradient(135deg, var(--color-purple-blue), var(--color-teal-blue), var(--color-golden-yellow), var(--color-orange-brown));
     background-clip: text;
     -webkit-background-clip: text;
@@ -93,7 +93,7 @@
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center px-8 py-4 font-bold rounded-none border-2 transition-all duration-300 focus:outline-none uppercase tracking-wider;
-    font-family: 'Orbitron', monospace;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 0.1em;
     position: relative;
     overflow: hidden;
@@ -104,8 +104,8 @@
     border: 2px solid var(--color-teal-blue);
     color: var(--color-teal-blue);
     box-shadow: 
-      0 0 20px rgba(71, 157, 192, 0.3),
-      inset 0 0 20px rgba(71, 157, 192, 0.1);
+      0 0 20px rgba(58, 190, 249, 0.3),
+      inset 0 0 20px rgba(58, 190, 249, 0.1);
     transition: all 0.3s ease;
   }
   
@@ -116,7 +116,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(71, 157, 192, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(58, 190, 249, 0.2), transparent);
     transition: left 0.5s;
   }
   
@@ -128,8 +128,8 @@
     background: var(--color-teal-blue);
     color: var(--color-dark);
     box-shadow: 
-      0 0 30px rgba(71, 157, 192, 0.6),
-      inset 0 0 30px rgba(71, 157, 192, 0.2);
+      0 0 30px rgba(58, 190, 249, 0.6),
+      inset 0 0 30px rgba(58, 190, 249, 0.2);
     transform: translateY(-2px);
   }
   
@@ -138,16 +138,16 @@
     border: 2px solid var(--color-purple-blue);
     color: var(--color-purple-blue);
     box-shadow: 
-      0 0 20px rgba(74, 80, 142, 0.3),
-      inset 0 0 20px rgba(74, 80, 142, 0.1);
+      0 0 20px rgba(27, 27, 58, 0.3),
+      inset 0 0 20px rgba(27, 27, 58, 0.1);
   }
   
   .btn-secondary:hover {
     background: var(--color-purple-blue);
     color: var(--color-light);
     box-shadow: 
-      0 0 30px rgba(74, 80, 142, 0.6),
-      inset 0 0 30px rgba(74, 80, 142, 0.2);
+      0 0 30px rgba(27, 27, 58, 0.6),
+      inset 0 0 30px rgba(27, 27, 58, 0.2);
     transform: translateY(-2px);
   }
   
@@ -156,16 +156,16 @@
     border-color: var(--color-golden-yellow);
     color: var(--color-golden-yellow);
     box-shadow: 
-      0 0 20px rgba(217, 148, 73, 0.3),
-      inset 0 0 20px rgba(217, 148, 73, 0.1);
+      0 0 20px rgba(255, 211, 105, 0.3),
+      inset 0 0 20px rgba(255, 211, 105, 0.1);
   }
   
   .btn-outline:hover {
     background: var(--color-golden-yellow);
     color: var(--color-dark);
     box-shadow: 
-      0 0 30px rgba(217, 148, 73, 0.6),
-      inset 0 0 30px rgba(217, 148, 73, 0.2);
+      0 0 30px rgba(255, 211, 105, 0.6),
+      inset 0 0 30px rgba(255, 211, 105, 0.2);
     transform: translateY(-2px);
   }
   
@@ -185,18 +185,18 @@
   .card {
     @apply bg-gray-900 border rounded-lg shadow-2xl hover:shadow-2xl transition-all duration-300;
     border-color: var(--color-purple-blue);
-    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.7));
+    background: linear-gradient(135deg, rgba(27, 27, 58, 0.9), rgba(27, 27, 58, 0.7));
     backdrop-filter: blur(10px);
     box-shadow: 
-      0 8px 32px rgba(74, 80, 142, 0.2),
-      inset 0 1px 0 rgba(74, 80, 142, 0.3);
+      0 8px 32px rgba(27, 27, 58, 0.2),
+      inset 0 1px 0 rgba(27, 27, 58, 0.3);
   }
   
   .card:hover {
     transform: translateY(-4px);
     box-shadow: 
-      0 16px 40px rgba(74, 80, 142, 0.3),
-      inset 0 1px 0 rgba(74, 80, 142, 0.4);
+      0 16px 40px rgba(27, 27, 58, 0.3),
+      inset 0 1px 0 rgba(27, 27, 58, 0.4);
   }
   
   .gradient-text {
