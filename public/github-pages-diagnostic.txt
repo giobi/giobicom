@@ -33,4 +33,8 @@ Try accessing: https://giobi.github.io/giobicom25/status
 If it loads, the build is fine - just fix the GitHub Pages source setting.
 
 Generated: $(date -u)
-Build timestamp: 2025-08-25T14:06:03Z
+Build timestamp: 2025-08-25T15:31:08Z
+Last updated: $(date -Iseconds)
+
+🚀 QUICK FIX:
+Run './fix-github-pages.sh' in the repository root for step-by-step guidance.

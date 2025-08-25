@@ -1,5 +1,7 @@
 # Giobi.com - Sviluppo Web e Applicazioni Laravel
 
+> **🚨 GITHUB PAGES 404 FIX NEEDED**: If you see a 404 error at https://giobi.github.io/giobicom25/, run `./fix-github-pages.sh` for step-by-step instructions to fix the configuration.
+
 Benvenuti nel repository del sito web ufficiale di **Giobi.com**, agenzia specializzata nello sviluppo di siti web e applicazioni Laravel a Milano. Il nostro team combina oltre 15 anni di esperienza nel settore con le tecnologie più moderne per creare soluzioni web innovative e performanti.
 
 ## 🚀 La Nostra Missione
@@ -9,7 +11,7 @@ Gestiamo ogni progetto con la massima cura, dalla singola landing page ai gestio
 ## 🛠️ Caratteristiche Principali
 
 - **Single Page Application (SPA)**: Esperienza utente fluida e reattiva
-- **Performance Elevate**: Ottimizzato per Core Web Vitals e velocità di caricamento
+- **Performance Elevate**: Ottimizzato per Core Web Vitals e velocità di caricamento (aggiornato 2025)
 - **Design Responsivo**: Ottimizzazione mobile-first per oltre il 50% del traffico mobile con layout migliorato
 - **Fighting Game Sprites**: Sistema di icone personalizzate ispirate al mondo dei picchiaduro
 - **Tecnologie in Evoluzione**: WordPress e Laravel con codice sviluppato ad hoc
@@ -116,7 +118,32 @@ Tutti i sprites sono stati creati appositamente con stile fighting game:
 - **Workflow Automation**: GitHub Actions e CI/CD
 - **Content Generation**: AI per contenuti e copywriting
 - **Code Review**: Automazioni per quality assurance
-## 🚀 Come Contribuire / Sviluppare Localmente
+## 🔧 Quick Troubleshooting
+
+### ❌ Site showing 404 error
+
+If https://giobi.github.io/giobicom25/ shows a 404 error:
+
+1. **Run the fix script:**
+   ```bash
+   ./fix-github-pages.sh
+   ```
+
+2. **Manual fix** (if script guidance needed):
+   - Go to [Repository Settings → Pages](https://github.com/giobi/giobicom25/settings/pages)
+   - Change "Source" from "Deploy from a branch" to "GitHub Actions"
+   - Save and wait 2-3 minutes
+
+3. **Why this happens:** GitHub defaults to Jekyll processing, but Jekyll can't handle Astro files.
+
+### ✅ Verify fix worked
+- Test: https://giobi.github.io/giobicom25/
+- Status: https://giobi.github.io/giobicom25/status
+- Run: `./fix-github-pages.sh` again to confirm
+
+---
+
+## 🚀 Como Contribuire / Sviluppare Localmente
 
 Per iniziare a lavorare su questo progetto, segui questi passaggi:
 
