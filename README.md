@@ -185,6 +185,8 @@ Il progetto è configurato per deployment automatico su GitHub Pages tramite Git
 - Workflow: `.github/workflows/deploy.yml`
 - **URL Live**: https://giobi.github.io/giobicom25
 
+⚠️ **Importante:** Assicurati che nelle impostazioni del repository GitHub Pages sia configurato come "GitHub Actions" e non "Deploy from a branch" per evitare errori Jekyll.
+
 > 📖 **Guida Dettagliata**: Per informazioni complete su deployment, troubleshooting e workflow, consulta [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
 
 ### Server Dedicato Giobi
