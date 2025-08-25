@@ -1,5 +1,18 @@
 # GitHub Pages Configuration Fix
 
+## Quick Diagnosis
+
+Run the diagnostic script to check your configuration:
+```bash
+./scripts/check-pages-config.sh
+```
+
+This script will verify:
+- ✅ Astro project structure
+- ✅ Required configuration files
+- ✅ Build process functionality  
+- ✅ Generated output files
+
 ## Issue: Jekyll Processing Astro Files
 
 If you're experiencing build failures with errors like:

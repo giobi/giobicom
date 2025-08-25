@@ -162,6 +162,9 @@ npm run build
 # Preview build di produzione
 npm run preview
 
+# Test configurazione GitHub Pages
+./scripts/check-pages-config.sh
+
 # Lint del codice
 npm run lint
 

@@ -67,6 +67,9 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Check GitHub Pages configuration
+./scripts/check-pages-config.sh
 ```
 
 ### Configuration Files
