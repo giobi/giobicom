@@ -25,12 +25,13 @@
     @apply font-sans;
     background: linear-gradient(135deg, var(--color-dark) 0%, #2A2A4A 25%, #1E3A5F 50%, #2A2A4A 75%, var(--color-dark) 100%);
     background-image: 
-      radial-gradient(circle at 20% 20%, rgba(27, 27, 58, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(58, 190, 249, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 40% 60%, rgba(255, 211, 105, 0.06) 0%, transparent 50%),
-      linear-gradient(rgba(27, 27, 58, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(58, 190, 249, 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+      radial-gradient(circle at 20% 20%, rgba(27, 27, 58, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(58, 190, 249, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgba(255, 211, 105, 0.08) 0%, transparent 50%),
+      linear-gradient(rgba(27, 27, 58, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(58, 190, 249, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+    background-attachment: fixed;
     min-height: 100vh;
     color: var(--color-light);
   }
@@ -610,6 +611,159 @@
   /* Text shadow glow effect */
   .hover\:text-shadow-glow:hover {
     text-shadow: 0 0 15px rgba(58, 190, 249, 0.6);
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .enhanced-btn {
+      padding: 1rem 2rem;
+    }
+    
+    .enhanced-service-card {
+      padding: 1.5rem;
+    }
+    
+    .stat-card {
+      padding: 1rem;
+    }
+    
+    .enhanced-terminal {
+      padding: 1.5rem;
+    }
+    
+    .enhanced-contact-form {
+      padding: 1.5rem;
+    }
+    
+    .hero-title-glow {
+      text-shadow: 0 0 15px rgba(58, 190, 249, 0.4);
+    }
+    
+    .hero-subtitle {
+      text-shadow: 0 0 10px rgba(255, 211, 105, 0.3);
+    }
+  }
+
+  /* Reduced motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .floating,
+    .neon-glow,
+    .pulse-animation,
+    .blinking-cursor {
+      animation: none;
+    }
+    
+    .enhanced-btn:hover,
+    .card:hover,
+    .stat-card:hover {
+      transform: none;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .glass-effect {
+      background: rgba(0, 0, 0, 0.9);
+      border: 2px solid white;
+    }
+    
+    .enhanced-text {
+      color: white;
+    }
+  }
+
+  /* Dark mode enhancements */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-attachment: scroll; /* Better performance on mobile */
+    }
+  }
+
+  /* Performance optimizations */
+  .enhanced-service-card,
+  .stat-card,
+  .enhanced-contact-form,
+  .enhanced-mission-card {
+    will-change: transform;
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
+
+  /* Focus states for better accessibility */
+  .enhanced-btn:focus,
+  .enhanced-input:focus,
+  .enhanced-checkbox:focus {
+    outline: 2px solid var(--color-golden-yellow);
+    outline-offset: 2px;
+  }
+
+  /* Loading state animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .loading-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Scroll Progress Indicator */
+  #scroll-progress {
+    box-shadow: 0 0 10px rgba(58, 190, 249, 0.5);
+  }
+
+  /* Animation classes */
+  .animate-fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  /* CSS Variables for animation control */
+  :root {
+    --animation-duration: 0.8s;
+  }
+
+  /* Enhanced fade-in animation */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all var(--animation-duration) ease-out;
+  }
+
+  .fade-in-up.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Improved performance with contain */
+  .card,
+  .enhanced-service-card,
+  .stat-card,
+  .enhanced-contact-form,
+  .enhanced-mission-card {
+    contain: layout style;
+  }
+
+  /* Modern CSS Grid improvements */
+  @supports (display: grid) {
+    .grid {
+      gap: 2rem;
+    }
+  }
+
+  /* CSS Custom Properties for better theming */
+  .glass-effect {
+    --glass-bg: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.6));
+    --glass-border: rgba(74, 80, 142, 0.4);
+    --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.2);
+    
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
   }
 }
 
