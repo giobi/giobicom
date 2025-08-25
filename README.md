@@ -183,6 +183,9 @@ Il progetto è configurato per deployment automatico su GitHub Pages tramite Git
 - Branch sorgente: `main`
 - Cartella build: `dist/`
 - Workflow: `.github/workflows/deploy.yml`
+- **URL Live**: https://giobi.github.io/giobicom25
+
+> 📖 **Guida Dettagliata**: Per informazioni complete su deployment, troubleshooting e workflow, consulta [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
 
 ### Server Dedicato Giobi
 Per clienti che richiedono hosting dedicato sui nostri server:
