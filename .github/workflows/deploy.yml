@@ -35,10 +35,23 @@ jobs:
       - name: Build with Astro
         run: npm run build
         
-      - name: Upload artifact
+      - name: Upload artifact (main branch only)
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+          
+      - name: Build verification complete
+        run: |
+          echo "✅ Build completed successfully!"
+          echo "📁 Generated files:"
+          ls -la dist/
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "🚀 This build will be deployed to GitHub Pages"
+          else
+            echo "🔍 This is a PR build - deployment skipped"
+            echo "💡 Changes will be deployed when merged to main branch"
+          fi
 
   deploy:
     environment:
