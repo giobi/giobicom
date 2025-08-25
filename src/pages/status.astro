@@ -58,11 +58,32 @@ const incidents = [
         </p>
       </div>
       
+      <!-- GitHub Pages Diagnostic Alert -->
+      <div class="mb-8">
+        <div class="retro-border bg-yellow-900 border-yellow-400 p-6 max-w-4xl mx-auto">
+          <div class="text-yellow-300 text-lg font-bold uppercase tracking-wider mb-3">⚠️ GitHub Pages Configuration Check</div>
+          <div class="text-yellow-200 font-mono text-sm mb-4">
+            Se vedi un errore 404 sul sito principale, è necessario configurare GitHub Pages:
+          </div>
+          <div class="text-left bg-black p-4 rounded border border-yellow-400">
+            <div class="text-yellow-300 font-bold mb-2">🔧 Passaggi per la risoluzione:</div>
+            <ol class="text-yellow-200 font-mono text-xs space-y-1 list-decimal list-inside">
+              <li>Vai su <a href="https://github.com/giobi/giobicom25/settings/pages" target="_blank" class="text-yellow-400 underline">GitHub Settings → Pages</a></li>
+              <li>Cambia "Source" da "Deploy from a branch" a "GitHub Actions"</li>
+              <li>Salva le impostazioni e attendi il prossimo deployment</li>
+            </ol>
+            <div class="mt-3 text-yellow-300 font-mono text-xs">
+              📋 Status: Se vedi questa pagina, il build funziona correttamente
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Overall Status -->
       <div class="text-center mb-12">
         <div class="retro-border bg-black p-6 max-w-md mx-auto">
-          <div class="text-green-300 text-2xl font-bold uppercase tracking-wider mb-2">All Systems Operational</div>
-          <div class="text-green-500 font-mono text-sm">Tutti i servizi funzionano correttamente</div>
+          <div class="text-green-300 text-2xl font-bold uppercase tracking-wider mb-2">Build System Operational</div>
+          <div class="text-green-500 font-mono text-sm">Sistema di build e deployment funzionanti</div>
         </div>
       </div>
       
