@@ -1,12 +1,12 @@
 // src/content/config.ts
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    author: z.string().default('giobi.com'),
+    author: z.string().default("giobi.com"),
     date: z.date(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
@@ -16,7 +16,7 @@ const blog = defineCollection({
 });
 
 const faq = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     question: z.string(),
     category: z.string(),
