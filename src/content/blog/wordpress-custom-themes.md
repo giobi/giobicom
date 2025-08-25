@@ -53,7 +53,7 @@ Il file `functions.php` è il cuore del tuo tema. Qui puoi:
 function theme_setup() {
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
-    
+
     register_nav_menus([
         'primary' => 'Menu Principale',
         'footer' => 'Menu Footer'
