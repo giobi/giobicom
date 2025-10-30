@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giobi - Developer & Problem Solver</title>
+    <title>giobi.com - Sviluppo Web e Applicazioni Laravel</title>
+    <meta name="description" content="Sviluppo siti web professionali e applicazioni Laravel dal 2008. Specializzati in WordPress, e-commerce e consulenza tecnica.">
     <style>
         * {
             margin: 0;
@@ -11,137 +12,437 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            line-height: 1.6;
-            color: #333;
-            background: #fafafa;
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-darker: #050505;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent: #00ff88;
+            --accent-dim: #00cc66;
+            --border: #1a1a1a;
+            --glow: rgba(0, 255, 136, 0.3);
         }
 
-        header {
-            border-bottom: 2px solid #333;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
+        body {
+            font-family: 'Courier New', 'Courier', monospace;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-dark);
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,136,0.03) 2px, rgba(0,255,136,0.03) 4px);
         }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0,255,136,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--bg-darker);
+            border: 1px solid var(--border);
+            border-radius: 4px 4px 0 0;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-secondary);
+        }
+
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27c93f; }
 
         h1 {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .glitch {
+            color: var(--accent);
+            text-shadow:
+                2px 2px 0 rgba(255,0,0,0.3),
+                -2px -2px 0 rgba(0,255,255,0.3);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 12px;
+            height: 1.2em;
+            background: var(--accent);
+            margin-left: 4px;
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            border: 2px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--glow);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dim);
+            box-shadow: 0 0 30px var(--glow);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            display: block;
             margin-bottom: 0.5rem;
         }
 
-        h2 {
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem 0;
-            border-bottom: 1px solid #666;
-            padding-bottom: 0.5rem;
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        p {
+        /* Services Section */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title::before {
+            content: '> ';
+            color: var(--accent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: var(--bg-darker);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(0,255,136,0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-card h3 {
+            color: var(--accent);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
-            border-bottom: 1px solid #0066cc;
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
         }
 
-        a:hover {
-            background: #0066cc;
-            color: #fff;
+        .service-card li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
         }
 
+        .service-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Clients Section */
+        .clients {
+            background: var(--bg-darker);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 2rem;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .client-logo {
+            text-align: center;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            background: var(--bg-dark);
+            transition: all 0.3s ease;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .client-logo:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Footer */
         footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #666;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .meta {
-            color: #666;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
-        ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
         }
 
-        @media (max-width: 640px) {
-            body {
-                padding: 1rem;
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 70vh;
             }
 
-            h1 {
-                font-size: 1.5rem;
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            h2 {
-                font-size: 1.2rem;
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Giobi</h1>
-        <p class="meta">Developer & Problem Solver — Lago Maggiore, Italia</p>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="terminal-header">
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <span style="margin-left: 1rem; color: var(--text-secondary);">~/giobi.com</span>
+            </div>
 
-    <main>
-        <section>
-            <h2>Chi sono</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </section>
+            <h1>
+                <span class="glitch">SVILUPPO WEB</span><br>
+                && APPLICAZIONI LARAVEL<span class="cursor"></span>
+            </h1>
 
-        <section>
-            <h2>Cosa faccio</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua:
+            <p class="tagline">
+                Dal <strong style="color: var(--accent);">2008</strong> creiamo soluzioni web innovative con WordPress e Laravel.<br>
+                Trasformiamo le tue idee in applicazioni web performanti e scalabili.
             </p>
-            <ul>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Consectetur adipiscing elit</li>
-                <li>Sed do eiusmod tempor incididunt</li>
-                <li>Ut labore et dolore magna aliqua</li>
-            </ul>
-            <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
-            </p>
-        </section>
 
-        <section>
-            <h2>Contatti</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore:
-            </p>
-            <p>
-                Email: <a href="mailto:hello@giobi.com">hello@giobi.com</a><br>
-                GitHub: <a href="https://github.com/giobi" target="_blank">github.com/giobi</a>
-            </p>
-        </section>
-    </main>
+            <div class="cta-group">
+                <a href="#contatti" class="btn btn-primary">RICHIEDI PREVENTIVO</a>
+                <a href="#servizi" class="btn">SCOPRI I SERVIZI</a>
+            </div>
 
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Anni Esperienza</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Progetti</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Clienti</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servizi" class="section">
+        <h2 class="section-title">Servizi</h2>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Sviluppo WordPress</h3>
+                <p>Temi personalizzati, plugin su misura e ottimizzazione performance per siti WordPress professionali.</p>
+                <ul>
+                    <li>Temi Personalizzati</li>
+                    <li>Plugin Custom</li>
+                    <li>Ottimizzazione SEO</li>
+                    <li>Manutenzione</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Applicazioni Laravel</h3>
+                <p>Sviluppo di applicazioni web robuste e scalabili con il framework Laravel più moderno.</p>
+                <ul>
+                    <li>API REST</li>
+                    <li>Dashboard Admin</li>
+                    <li>Sistema Auth</li>
+                    <li>Database Design</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>E-commerce Solutions</h3>
+                <p>Negozi online completi con WooCommerce o soluzioni custom per vendite digitali.</p>
+                <ul>
+                    <li>WooCommerce</li>
+                    <li>Payment Gateway</li>
+                    <li>Gestione Magazzino</li>
+                    <li>Analytics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <h2 class="section-title">Hanno scelto giobi.com</h2>
+        <div class="clients-grid">
+            <div class="client-logo">FASOLI PIANTE</div>
+            <div class="client-logo">IL TIMONE</div>
+            <div class="client-logo">POSSETTI</div>
+            <div class="client-logo">DIBIESSE</div>
+            <div class="client-logo">MARIO CROSTA</div>
+            <div class="client-logo">EMISFERA</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contatti" class="section">
+        <h2 class="section-title">Contatti</h2>
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+                Hai un progetto in mente? Parliamone.
+            </p>
+            <p>
+                <strong style="color: var(--accent);">Email:</strong>
+                <a href="mailto:giobi@giobi.com" style="color: var(--text-primary);">giobi@giobi.com</a>
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong style="color: var(--accent);">GitHub:</strong>
+                <a href="https://github.com/giobi" target="_blank" style="color: var(--text-primary);">github.com/giobi</a>
+            </p>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                Verbania, Lago Maggiore — Italia
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Giobi. Built with HTML + CSS. <a href="https://dev.giobi.com">Blog tecnico</a></p>
+        <p>© 2025 giobi.com — Sviluppo Web & Laravel dal 2008</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+            Built with HTML + CSS • <a href="https://dev.giobi.com">Blog Tecnico</a>
+        </p>
     </footer>
 </body>
 </html>
