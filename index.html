@@ -21,6 +21,7 @@
             --accent-dim: #00cc66;
             --border: #1a1a1a;
             --glow: rgba(0, 255, 136, 0.3);
+            --icon-gray: #666666;
         }
 
         body {
@@ -119,6 +120,29 @@
             line-height: 1.6;
         }
 
+        .tech-icons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .tech-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--icon-gray);
+            font-size: 0.8rem;
+        }
+
+        .tech-icon svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--icon-gray);
+        }
+
         .cta-group {
             display: flex;
             gap: 1rem;
@@ -153,6 +177,11 @@
         .btn-primary:hover {
             background: var(--accent-dim);
             box-shadow: 0 0 30px var(--glow);
+        }
+
+        .btn.active {
+            background: var(--accent);
+            color: var(--bg-dark);
         }
 
         /* Stats */
@@ -282,6 +311,62 @@
             color: var(--accent);
         }
 
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            padding: 2rem;
+            background: var(--bg-darker);
+            border: 1px solid var(--border);
+        }
+
+        .form-type-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 10px var(--glow);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .hidden {
+            display: none;
+        }
+
         /* Footer */
         footer {
             padding: 2rem;
@@ -300,6 +385,12 @@
             text-decoration: underline;
         }
 
+        .footer-expertise {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--icon-gray);
+        }
+
         @media (max-width: 768px) {
             .hero {
                 min-height: 70vh;
@@ -316,6 +407,10 @@
             .btn {
                 width: 100%;
                 text-align: center;
+            }
+
+            .form-type-selector {
+                flex-direction: column;
             }
         }
     </style>
@@ -341,6 +436,21 @@
                 Trasformiamo le tue idee in applicazioni web performanti e scalabili.
             </p>
 
+            <div class="tech-icons">
+                <div class="tech-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.469 0H2.531a2.53 2.53 0 0 0-2.531 2.531v18.938A2.531 2.531 0 0 0 2.531 24h18.938A2.531 2.531 0 0 0 24 21.469V2.531A2.531 2.531 0 0 0 21.469 0zM12 3.469c1.281 0 2.344 1.063 2.344 2.344S13.281 8.156 12 8.156s-2.344-1.063-2.344-2.344S10.719 3.47 12 3.47zm-6.094 0c1.281 0 2.344 1.063 2.344 2.344S7.187 8.156 5.906 8.156 3.563 7.094 3.563 5.812 4.625 3.47 5.906 3.47zm0 13.125c-1.281 0-2.344-1.063-2.344-2.344s1.063-2.344 2.344-2.344 2.344 1.063 2.344 2.344-1.063 2.344-2.344 2.344zm6.094 4.219c-1.281 0-2.344-1.063-2.344-2.344S10.719 16.125 12 16.125s2.344 1.063 2.344 2.344-1.063 2.344-2.344 2.344zm0-7.875c-1.281 0-2.344-1.063-2.344-2.344S10.719 8.25 12 8.25s2.344 1.063 2.344 2.344-1.063 2.344-2.344 2.344zm6.094 3.656c-1.281 0-2.344-1.063-2.344-2.344s1.063-2.344 2.344-2.344 2.344 1.063 2.344 2.344-1.063 2.344-2.344 2.344z"/>
+                    </svg>
+                    <span>Laravel</span>
+                </div>
+                <div class="tech-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.158.955C5.984.955.016 6.923.016 13.097c0 5.714 3.615 10.566 8.641 12.29.632.116.864-.274.864-.61 0-.3-.011-1.096-.017-2.152-3.382.735-4.096-1.631-4.096-1.631-.575-1.461-1.404-1.85-1.404-1.85-1.148-.784.087-.769.087-.769 1.27.089 1.938 1.304 1.938 1.304 1.128 1.933 2.958 1.375 3.68 1.051.115-.817.443-1.375.805-1.691-2.808-.32-5.76-1.404-5.76-6.249 0-1.38.493-2.508 1.302-3.391-.13-.32-.565-1.607.124-3.349 0 0 1.062-.34 3.478 1.295a12.093 12.093 0 0 1 3.166-.426c1.073.005 2.153.145 3.165.426 2.415-1.635 3.476-1.295 3.476-1.295.69 1.742.255 3.029.125 3.349.81.883 1.301 2.011 1.301 3.391 0 4.856-2.956 5.925-5.773 6.237.453.39.857 1.161.857 2.34 0 1.691-.015 3.054-.015 3.469 0 .338.23.731.87.607 5.023-1.728 8.636-6.577 8.636-12.287C24.3 6.923 18.332.955 12.158.955z"/>
+                    </svg>
+                    <span>WordPress</span>
+                </div>
+            </div>
+
             <div class="cta-group">
                 <a href="#contatti" class="btn btn-primary">RICHIEDI PREVENTIVO</a>
                 <a href="#servizi" class="btn">SCOPRI I SERVIZI</a>
@@ -348,15 +458,15 @@
 
             <div class="stats">
                 <div class="stat">
-                    <span class="stat-number">15+</span>
+                    <span class="stat-number">20+</span>
                     <span class="stat-label">Anni Esperienza</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">200+</span>
+                    <span class="stat-number">150+</span>
                     <span class="stat-label">Progetti</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">50+</span>
+                    <span class="stat-number">30+</span>
                     <span class="stat-label">Clienti</span>
                 </div>
             </div>
@@ -369,19 +479,19 @@
 
         <div class="services-grid">
             <div class="service-card">
-                <h3>Sviluppo WordPress</h3>
-                <p>Temi personalizzati, plugin su misura e ottimizzazione performance per siti WordPress professionali.</p>
+                <h3>Siti Web</h3>
+                <p>Siti web professionali, responsive e ottimizzati SEO. Temi personalizzati WordPress e sviluppo custom per ogni esigenza.</p>
                 <ul>
-                    <li>Temi Personalizzati</li>
-                    <li>Plugin Custom</li>
+                    <li>WordPress Custom</li>
+                    <li>Design Responsive</li>
                     <li>Ottimizzazione SEO</li>
-                    <li>Manutenzione</li>
+                    <li>Performance Tuning</li>
                 </ul>
             </div>
 
             <div class="service-card">
-                <h3>Applicazioni Laravel</h3>
-                <p>Sviluppo di applicazioni web robuste e scalabili con il framework Laravel più moderno.</p>
+                <h3>Gestionali Web</h3>
+                <p>Applicazioni web su misura con Laravel. Dashboard, CRM, ERP e sistemi di gestione aziendali scalabili e sicuri.</p>
                 <ul>
                     <li>API REST</li>
                     <li>Dashboard Admin</li>
@@ -391,13 +501,13 @@
             </div>
 
             <div class="service-card">
-                <h3>E-commerce Solutions</h3>
-                <p>Negozi online completi con WooCommerce o soluzioni custom per vendite digitali.</p>
+                <h3>Strategie Digitali & SEO</h3>
+                <p>Piani di comunicazione digitale integrati, ottimizzazione SEO e strategie di posizionamento per aumentare la visibilità online.</p>
                 <ul>
-                    <li>WooCommerce</li>
-                    <li>Payment Gateway</li>
-                    <li>Gestione Magazzino</li>
-                    <li>Analytics</li>
+                    <li>SEO Audit & Strategy</li>
+                    <li>Content Marketing</li>
+                    <li>Analytics & Reporting</li>
+                    <li>Conversion Optimization</li>
                 </ul>
             </div>
         </div>
@@ -407,12 +517,12 @@
     <section class="clients">
         <h2 class="section-title">Hanno scelto giobi.com</h2>
         <div class="clients-grid">
-            <div class="client-logo">FASOLI PIANTE</div>
-            <div class="client-logo">IL TIMONE</div>
-            <div class="client-logo">POSSETTI</div>
-            <div class="client-logo">DIBIESSE</div>
-            <div class="client-logo">MARIO CROSTA</div>
-            <div class="client-logo">EMISFERA</div>
+            <div class="client-logo">LOGO</div>
+            <div class="client-logo">LOGO</div>
+            <div class="client-logo">LOGO</div>
+            <div class="client-logo">LOGO</div>
+            <div class="client-logo">LOGO</div>
+            <div class="client-logo">LOGO</div>
         </div>
     </section>
 
@@ -425,7 +535,7 @@
             </p>
             <p>
                 <strong style="color: var(--accent);">Email:</strong>
-                <a href="mailto:giobi@giobi.com" style="color: var(--text-primary);">giobi@giobi.com</a>
+                <a href="mailto:info@giobi.com" style="color: var(--text-primary);">info@giobi.com</a>
             </p>
             <p style="margin-top: 1rem;">
                 <strong style="color: var(--accent);">GitHub:</strong>
@@ -435,6 +545,46 @@
                 Verbania, Lago Maggiore — Italia
             </p>
         </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <div class="form-type-selector">
+                <button class="btn btn-primary active" onclick="setFormType('contatti')">CONTATTI</button>
+                <button class="btn" onclick="setFormType('preventivo')">PREVENTIVO</button>
+            </div>
+
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group hidden" id="company-field">
+                    <label for="company">Azienda</label>
+                    <input type="text" id="company" name="company">
+                </div>
+
+                <div class="form-group hidden" id="service-field">
+                    <label for="service">Servizio richiesto</label>
+                    <select id="service" name="service">
+                        <option value="">Seleziona un servizio</option>
+                        <option value="siti-web">Siti Web</option>
+                        <option value="gestionali">Gestionali Web</option>
+                        <option value="ecommerce">E-commerce</option>
+                        <option value="seo">Strategie Digitali & SEO</option>
+                        <option value="manutenzione">Manutenzione & Support</option>
+                        <option value="altro">Altro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Messaggio *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">INVIA</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -443,6 +593,40 @@
         <p style="margin-top: 0.5rem; font-size: 0.85rem;">
             Built with HTML + CSS • <a href="https://dev.giobi.com">Blog Tecnico</a>
         </p>
+        <p class="footer-expertise">
+            Laravel Expert • WordPress Expert
+        </p>
     </footer>
+
+    <script>
+        let currentFormType = 'contatti';
+
+        function setFormType(type) {
+            currentFormType = type;
+
+            // Update button states
+            const buttons = document.querySelectorAll('.form-type-selector .btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Show/hide fields based on form type
+            const companyField = document.getElementById('company-field');
+            const serviceField = document.getElementById('service-field');
+
+            if (type === 'preventivo') {
+                companyField.classList.remove('hidden');
+                serviceField.classList.remove('hidden');
+            } else {
+                companyField.classList.add('hidden');
+                serviceField.classList.add('hidden');
+            }
+        }
+
+        // Form submission handler (can be customized)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submission non implementato. Integra con backend o servizio email.');
+        });
+    </script>
 </body>
 </html>
