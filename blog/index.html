@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - giobi.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.7;
+            color: #e0e0e0;
+            background: #0a0a0a;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            color: #00ff88;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #00ff88;
+            font-size: 2.5rem;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .post-list {
+            list-style: none;
+        }
+
+        .post-item {
+            background: #0f0f0f;
+            border: 1px solid #1a1a1a;
+            border-left: 3px solid #00ff88;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .post-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2);
+        }
+
+        .post-title {
+            color: #00ff88;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .post-title:hover {
+            text-decoration: underline;
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-excerpt {
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #1a1a1a;
+            color: #00cc66;
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .post-item {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Torna alla home</a>
+
+        <h1>Blog</h1>
+
+        <ul class="post-list">
+            <li class="post-item">
+                <a href="brain-parte-1.html" class="post-title">Brain - Parte 1: Quando Notion diventa un problema</a>
+                <div class="post-meta">3 novembre 2025 • 5 min lettura</div>
+                <p class="post-excerpt">
+                    Il problema: troppi progetti, Notion che diventa un meta-progetto.
+                    La convergenza tra editor di testo, Git e AI. Perché file di testo + Git + Claude Code è la soluzione.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">notion</span>
+                    <span class="tag">markdown</span>
+                    <span class="tag">git</span>
+                    <span class="tag">claude-code</span>
+                </div>
+            </li>
+
+            <li class="post-item">
+                <a href="brain-parte-2.html" class="post-title">Brain - Parte 2: Come funziona in pratica</a>
+                <div class="post-meta">3 novembre 2025 • 5 min lettura</div>
+                <p class="post-excerpt">
+                    Workflow concreti: email → azione → documentazione. Database entità auto-generato.
+                    Validazione automatica. TODO con reminder. Il salto di fiducia nel collegare API.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">gmail-api</span>
+                    <span class="tag">automation</span>
+                    <span class="tag">validation</span>
+                    <span class="tag">nosql</span>
+                </div>
+            </li>
+
+            <li class="post-item">
+                <a href="brain-parte-3.html" class="post-title">Brain - Parte 3: Cosa manca e perché va bene così</a>
+                <div class="post-meta">3 novembre 2025 • 5 min lettura</div>
+                <p class="post-excerpt">
+                    Sviluppi futuri (query API, graph visualization, Telegram bot). Cosa NON farò (vector DB, UI complessa, SaaS).
+                    Potrebbe diventare un prodotto template open source.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">roadmap</span>
+                    <span class="tag">philosophy</span>
+                    <span class="tag">open-source</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

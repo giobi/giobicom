@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain - Parte 2: Come funziona in pratica - giobi.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #e0e0e0;
+            background: #0a0a0a;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            color: #00ff88;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            color: #00ff88;
+            font-size: 2.5rem;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        h2 {
+            color: #00ff88;
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        h3 {
+            color: #00cc66;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        code {
+            background: #1a1a1a;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #00ff88;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        strong {
+            color: #ffffff;
+        }
+        
+        a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Torna alla home</a>
+        <h2>Dalla teoria alla pratica</h2>
+
+<a href="link-parte-1">Nella prima parte</a> ho spiegato cos'è il brain e perché funziona. Ora vediamo <strong>come</strong> funziona davvero, con esempi concreti.
+
+<p>---</p>
+
+<h2>Workflow 1: Email → Azione → Documentazione</h2>
+
+<p>Il primo workflow è quello delle email. Ma non è solo "riassumere le mail".</p>
+
+<p>È:
+1. <strong>Leggere una email</strong> (es: "Cliente X chiede configurazione DNS per Google Workspace")
+2. <strong>FARE quello che c'è da fare</strong> (accedere Cloudflare API, configurare record MX, verificare propagazione)
+3. <strong>Preparare bozza di risposta</strong> ("Ho configurato i DNS come da richiesta, propagazione 5-10 minuti")
+4. <strong>Documentare</strong> nel log professionale</p>
+
+<strong>Nota importante</strong>: Preparo bozze, non invio automaticamente. Non ho ancora abbastanza casi studio per dire "l'AI può rispondere sempre senza controllo". Ma preparare la bozza mi risparmia già il 70% del lavoro.
+
+<p>Ogni mese, Claude processa anche tutte le email e genera due file riepilogo:</p>
+
+<strong>Log professionale</strong> (`log/2025/2025-11-gmail-log.md`):
+<pre><code><h2>2025-11-03 - Configurazione DNS progetto XYZ</h2>
+Cliente ACME richiede setup Google Workspace.
+Configurato record MX smtp.google.com.
+Email inviata a contatto tecnico.</code></pre>
+
+<strong>Diary personale</strong> (`diary/2025/2025-11-gmail-diary.md`):
+<pre><code><h2>2025-11-03</h2>
+Cena con amici. Discusso idea nuovo progetto personale.
+Ordinato libro su Amazon: "The Design of Everyday Things"</code></pre>
+
+<h3>Perché separarli?</h3>
+
+<p>Log e diary hanno <strong>audience diverse</strong>.</p>
+
+<p>Il log è professionale: potrei condividerlo con collaboratori, clienti, o usarlo per report. Contiene progetti, decisioni tecniche, interazioni di lavoro.</p>
+
+<p>Il diary è personale: eventi sociali, acquisti, viaggi, riflessioni. Roba che non ha senso mischiare con il lavoro.</p>
+
+<h3>Come funziona tecnicamente</h3>
+
+<p>1. Claude chiama Gmail API con query temporale (`after:2025/11/01 before:2025/12/01`)
+2. Scarica JSON di tutte le email del mese
+3. Analizza mittente, oggetto, corpo delle email
+4. Categorizza: lavoro vs vita privata
+5. Estrae eventi significativi
+6. Scrive due file markdown separati
+7. Committa su Git: `git add . && git commit -m "Process November emails" && git push`</p>
+
+<p>Tutto automatico. Io dormo, Claude lavora.</p>
+
+<p>---</p>
+
+<h2>Workflow 2: Database entità auto-generato</h2>
+
+<p>Dal processing delle email, Claude estrae automaticamente <strong>entità</strong>: persone, aziende, progetti.</p>
+
+<h3>Esempio: Persona</h3>
+
+<strong>File</strong>: `database/people/mario-rossi.md`
+
+<pre><code>---
+name: "Mario Rossi"
+email: "mario.rossi@example.com"
+company: "[[database/company/acme-corp|ACME Corp]]"
+role: "CTO"
+relationship: "cliente"
+created_at: "2025-11-03"
+---
+
+<h2>Timeline</h2>
+<ul><li>2025-11-03: Prima call introduttiva, discusso progetto gestionale</li>
+<li>2025-11-10: Inviato preventivo per sviluppo feature X</li>
+<li>2025-11-15: Approvato preventivo, partenza progetto</li>
+</ul>
+<h2>Progetti</h2>
+<ul><li>[[database/projects/acme-gestionale|ACME Gestionale]]</li>
+</ul>
+<h2>Note</h2>
+Preferisce comunicare via email piuttosto che call.
+Decisore tecnico, ma deve passare da CEO per budget.</code></pre>
+
+<h3>Esempio: Azienda</h3>
+
+<strong>File</strong>: `database/company/acme-corp.md`
+
+<pre><code>---
+name: "ACME Corp"
+type: "Cliente"
+website: "https://example-acme.com"
+---
+
+<h2>Contatti</h2>
+<ul><li>[[database/people/mario-rossi|Mario Rossi]] (CTO)</li>
+<li>[[database/people/lucia-bianchi|Lucia Bianchi]] (CEO)</li>
+</ul>
+<h2>Progetti</h2>
+<ul><li>[[database/projects/acme-gestionale|ACME Gestionale]]</li>
+<li>[[database/projects/acme-ecommerce|ACME Ecommerce]]</li>
+</ul>
+<h2>Storia</h2>
+Primo contatto ottobre 2025 via referral.
+Azienda 50 dipendenti, settore manufacturing.</code></pre>
+
+<h3>Wikilinks: il superpotere</h3>
+
+<p>I `[[link]]` creano un <strong>grafo navigabile</strong>.</p>
+
+<p>Apro `mario-rossi.md` → vedo azienda → clicco → apro `acme-corp.md` → vedo altri contatti → clicco → apro altro profilo.</p>
+
+<p>È come Obsidian, ma senza bisogno di Obsidian. Funziona con qualsiasi editor che supporta markdown (Obsidian, Logseq, VS Code con plugin, persino GitHub web interface).</p>
+
+<p>---</p>
+
+<h2>Workflow 3: Validazione automatica</h2>
+
+<p>Ho aggiunto recentemente un sistema di validazione basato su JSON Schema.</p>
+
+<h3>Definisco lo schema</h3>
+
+<strong>File</strong>: `schema/person.json`
+
+<pre><code>{
+  "required": ["name"],
+  "properties": {
+    "name": {"type": "string"},
+    "email": {"type": "string", "format": "email"},
+    "relationship": {
+      "enum": ["cliente", "collaboratore", "fornitore", "partner"]
+    }
+  }
+}</code></pre>
+
+<h3>Il sistema valida automaticamente</h3>
+
+<pre><code>$ python tools/brain/validate-frontmatter.py database/people/*.md
+
+<p>❌ mario-rossi.md: Invalid
+   • relationship: 'collaboratore esterno' is not one of enum</p>
+
+<p>✅ lucia-bianchi.md: Valid</code></pre></p>
+
+<p>Se qualcosa non quadra, il sistema me lo dice. Fix, commit, push. Zero entropy, zero inconsistenze.</p>
+
+<p>Questo gira anche come pre-commit hook: se provo a committare dati invalidi, Git blocca il commit finché non fixo.</p>
+
+<p>---</p>
+
+<h2>Workflow 4: TODO con reminder</h2>
+
+<p>Per task complessi, creo file dedicati nella cartella `todo/`.</p>
+
+<strong>File</strong>: `todo/2025-11-15-upgrade-server-xyz.md`
+
+<pre><code><strong>Reminder Date</strong>: 2025-11-15
+<strong>Priority</strong>: 🔥 Alta
+<strong>Status</strong>: Pending
+
+<h2>Context</h2>
+Server XYZ su DigitalOcean ha Ubuntu 20.04 LTS che va in EOL aprile 2025.
+Necessario upgrade a 22.04 o 24.04.
+
+<h2>What to Do</h2>
+<ul><li>[ ] Backup completo (database + files)</li>
+<li>[ ] Test upgrade su staging</li>
+<li>[ ] Schedulare finestra manutenzione con cliente</li>
+<li>[ ] Eseguire upgrade production</li>
+<li>[ ] Verificare funzionamento servizi</li>
+<li>[ ] Update documentazione</li>
+</ul>
+<h2>References</h2>
+<ul><li><a href="https://ubuntu.com/server/docs/upgrade-introduction">Guide Ubuntu upgrade</a></li>
+<li><a href="link-interno">Database backup/restore</a></li>
+<li>Contatto cliente: [[database/people/mario-rossi|Mario Rossi]]</code></pre></li>
+</ul>
+<h3>Check automatico all'avvio</h3>
+
+<p>All'inizio di ogni sessione, Claude controlla:</p>
+
+<pre><code>$ ls -lht todo/*.md | head -10</code></pre>
+
+<p>E mi segnala TODO con reminder scaduti o in scadenza oggi.</p>
+
+<p>"Hey, hai 2 TODO urgenti: upgrade server XYZ (scaduto 3 giorni fa) e call con cliente ABC (oggi pomeriggio)."</p>
+
+<p>Non devo ricordarmi nulla. Il sistema ricorda per me.</p>
+
+<p>---</p>
+
+<h2>Il salto di fiducia: collegare le API</h2>
+
+<p>Qui viene la parte che ha cambiato davvero tutto.</p>
+
+<p>Ho dato a Claude accesso alle <strong>API di Gmail</strong>. Può leggere le mie email. Può anche mandarle (tramite draft per sicurezza).</p>
+
+<p>Ho collegato <strong>Telegram</strong>. Posso mandare messaggi al bot e lui crea sketch, aggiunge TODO, fa query sul brain. Dal telefono, mentre sono in metro.</p>
+
+<p>Sto pianificando di integrare altri servizi. Ma non è questione di quanti. È questione di <strong>fiducia</strong>.</p>
+
+<h3>La domanda fondamentale</h3>
+
+<p>"Sei disposto a dare a un'AI accesso alle tue email?"</p>
+
+<p>Due anni fa avrei detto no. Oggi dico sì, perché:</p>
+
+<p>1. <strong>Trasparenza</strong>: Tutto quello che Claude fa è versionato su Git. Vedo ogni modifica, ogni commit. Se fa casino, lo vedo subito.</p>
+
+<p>2. <strong>Controllo</strong>: Ho sempre accesso diretto ai file. Posso modificare, cancellare, fare rollback. L'AI è un assistente, non un padrone.</p>
+
+<p>3. <strong>Reversibilità</strong>: Se domani decidessi di disattivare tutto, i miei dati rimangono. Sono file di testo. Non dipendo dall'AI per accedervi.</p>
+
+<p>4. <strong>Value proposition</strong>: Il tempo risparmiato vale il rischio. Invece di passare 2 ore al mese a riorganizzare note, Claude lo fa in 30 secondi. Ogni mese. Per sempre.</p>
+
+<h3>Il mindset shift</h3>
+
+<p>Non è automazione classica (se questo allora quello). È <strong>delegazione operativa</strong>.</p>
+
+<p>"Claude, processa le email di ottobre 2024."
+"Claude, crea un riepilogo dei progetti attivi."
+"Claude, trova tutte le interazioni con cliente XYZ."</p>
+
+<p>Lui esegue. Io faccio altro. Quando torno, il lavoro è fatto.</p>
+
+<p>Questo è possibile solo perché Claude Code ha accesso al filesystem, a Git, alle API. Non è solo chat. È un collaboratore con permessi di scrittura.</p>
+
+<p>---</p>
+
+<h2>Prossimamente</h2>
+
+<p>Nella terza e ultima parte: sviluppi futuri, cosa potrebbe diventare il brain, e perché alla fine tutto questo è solo un sistema per non impazzire.</p>
+
+<p>---</p>
+
+<strong>Serie Brain</strong>:
+<ul><li><a href="link-parte-1">Parte 1: Quando Notion diventa un problema</a></li>
+<li><strong>Parte 2: Come funziona in pratica</strong> (questo post)</li>
+<li>Parte 3: Sviluppi futuri e conclusioni (coming soon)</li>
+</ul>
+    </div>
+</body>
+</html>

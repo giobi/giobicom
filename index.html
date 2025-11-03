@@ -413,6 +413,55 @@
                 flex-direction: column;
             }
         }
+
+        /* Blog Section */
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-post {
+            background: var(--bg-darker);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: var(--text-primary);
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+            border-left-width: 5px;
+        }
+
+        .blog-post-title {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .blog-post-meta {
+            color: var(--icon-gray);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .blog-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
     </style>
 </head>
 <body>
@@ -526,6 +575,45 @@
         </div>
     </section>
 
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <h2 class="section-title">Blog</h2>
+        
+        <div class="blog-posts">
+            <a href="blog/brain-parte-1.html" class="blog-post">
+                <div class="blog-post-title">Brain - Parte 1: Quando Notion diventa un problema</div>
+                <div class="blog-post-meta">3 nov 2025 • 5 min</div>
+                <div class="blog-post-excerpt">
+                    Il problema: troppi progetti, Notion che diventa un meta-progetto.
+                    La convergenza tra editor di testo, Git e AI.
+                </div>
+            </a>
+
+            <a href="blog/brain-parte-2.html" class="blog-post">
+                <div class="blog-post-title">Brain - Parte 2: Come funziona in pratica</div>
+                <div class="blog-post-meta">3 nov 2025 • 5 min</div>
+                <div class="blog-post-excerpt">
+                    Workflow concreti: email → azione → documentazione. Database entità auto-generato.
+                    Il salto di fiducia nel collegare API.
+                </div>
+            </a>
+
+            <a href="blog/brain-parte-3.html" class="blog-post">
+                <div class="blog-post-title">Brain - Parte 3: Cosa manca e perché va bene così</div>
+                <div class="blog-post-meta">3 nov 2025 • 5 min</div>
+                <div class="blog-post-excerpt">
+                    Sviluppi futuri (query API, graph visualization). Cosa NON farò. 
+                    Potrebbe diventare un prodotto template open source.
+                </div>
+            </a>
+        </div>
+
+        <div class="blog-cta">
+            <a href="blog/" class="btn">VEDI TUTTI GLI ARTICOLI</a>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contatti" class="section">
         <h2 class="section-title">Contatti</h2>
@@ -591,7 +679,7 @@
     <footer>
         <p>© 2025 giobi.com — Sviluppo Web & Laravel dal 2008</p>
         <p style="margin-top: 0.5rem; font-size: 0.85rem;">
-            Built with HTML + CSS • <a href="https://dev.giobi.com">Blog Tecnico</a>
+            Built with HTML + CSS • <a href="blog/">Blog</a>
         </p>
         <p class="footer-expertise">
             Laravel Expert • WordPress Expert

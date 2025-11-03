@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain - Parte 1: Quando Notion diventa un problema - giobi.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #e0e0e0;
+            background: #0a0a0a;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            color: #00ff88;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            color: #00ff88;
+            font-size: 2.5rem;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        h2 {
+            color: #00ff88;
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        h3 {
+            color: #00cc66;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        code {
+            background: #1a1a1a;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #00ff88;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        strong {
+            color: #ffffff;
+        }
+        
+        a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Torna alla home</a>
+        <h2>Il problema: quando gli strumenti diventano distrazioni</h2>
+
+<p>Gestisco una decina di progetti contemporaneamente. Cliente A ha un bug urgente sul suo ecommerce, cliente B vuole aggiungere una feature al gestionale, e mentre sto nel mezzo di questi due mi arriva un'email con una proposta per un nuovo progetto. Nel frattempo, alle 2 di notte, mi viene in mente la soluzione perfetta per quel refactoring che rimandavo da settimane.</p>
+
+<p>Il cervello umano non è fatto per tenere traccia di tutto questo. Il mio di sicuro no.</p>
+
+<h3>La trappola degli strumenti perfetti</h3>
+
+<p>Uso Notion. Tutt'ora. È un ottimo tool, e probabilmente non lo abbandonerò tanto presto. Ha un grande vantaggio: lo metti in mano a chiunque e capisce. Cliente, collaboratore, parente. Intuitive, visuale, facile.</p>
+
+<p>Ma come developer, c'è un problema: <strong>diventi ossessionato dall'ottimizzare lo strumento invece di usarlo</strong>.</p>
+
+<p>Passi ore a creare template perfetti, a decidere se quella proprietà deve essere un select o un multi-select, a costruire relazioni tra database. Ti ritrovi a pensare "potrei fare uno script per automatizzare questo", "potrei usare le API per integrare quello", "potrei personalizzare quest'altra cosa".</p>
+
+<p>E così lo strumento che doveva salvarti tempo diventa un progetto a sé. Un meta-progetto. Per questo Notion è perfetto per chi non smanetta, ma diventa pericoloso per chi smanetta troppo.</p>
+
+<h3>Il ritorno alle origini</h3>
+
+<p>La svolta è stata rendermi conto che avevo già gli strumenti giusti. Da sempre.</p>
+
+<strong>File di testo</strong>: Markdown è solo un modo elegante per dire "file di testo con un po' di formattazione". Niente formati proprietari, niente lock-in. Tra 20 anni questi file saranno ancora leggibili.
+
+<p>Ma c'è di più. Una decente quantità di file di testo, ben strutturati, crea un <strong>NoSQL</strong> che a tratti diventa quasi un <strong>SQL</strong>. Puoi fare query, relazioni, aggregazioni. Solo che invece di tabelle hai file, invece di SQL hai grep e script.</p>
+
+<p>E la cosa interessante: spesso non li modifico neanche io direttamente. Li faccio modificare a Claude, o li modifico su GitHub web interface. L'importante è che siano file di testo standard.</p>
+
+<strong>Git</strong>: Lo conoscevo, lo usavo per il codice, ma nell'ultimo anno mi ha affascinato per un altro aspetto. Non è solo version control per software. È version control per _qualsiasi cosa_. Pensieri, note, diari, documentazione. Ogni modifica è tracciata. Ogni cambiamento ha un commit message. Puoi vedere l'evoluzione nel tempo, fare diff, tornare indietro.
+
+<h3>La convergenza</h3>
+
+<p>Poi è arrivato Claude Code. E più in generale, il mondo delle AI da riga di comando.</p>
+
+<p>Improvvisamente questi tre pezzi – editor di testo, Git, AI CLI – si sono incrociati nel punto perfetto.</p>
+
+<p>Posso dire a Claude: "Processa le email di ottobre 2024 e generami un riepilogo di cosa ho fatto". E lui:
+<ul><li>Si collega alle API di Gmail</li>
+<li>Scarica le email</li>
+<li>Le analizza</li>
+<li>Scrive un file markdown</li>
+<li>Lo committa su Git</li>
+<li>Mi dice "fatto"</li>
+</ul>
+Non è solo conversazione. È operatività vera. Un assistente che ha accesso diretto al filesystem, a Git, alle API esterne. Può leggere, scrivere, eseguire comandi, fare commit.</p>
+
+<p>Questo ha cambiato tutto.</p>
+
+<p>---</p>
+
+<h2>Cos'è il brain</h2>
+
+<p>Il brain è il sistema che è nato da questa convergenza.</p>
+
+<p>Non è un'app. Non è un SaaS. Non è un tool da installare.</p>
+
+<strong>È una cartella con dentro dei testi</strong>. In termini tecnici: una repository Git.
+
+<pre><code>brain/
+├── boot/          # Chi sono, come lavoro, regole operative
+├── log/YYYY/      # Diari tecnici/professionali
+├── diary/YYYY/    # Eventi personali
+├── database/      # Persone, aziende, progetti
+├── todo/          # Task con reminder
+├── sketch/        # Idee a caso
+└── tools/         # Documentazione API e workflow</code></pre>
+
+<strong>Perché è figo che sia così</strong>:
+
+<ul><li><strong>Divisi in cartelle</strong>: Ogni tipo di contenuto ha il suo posto. Log professionali separati da diary personali. TODO separati da sketch. Zero confusione, zero "dove avevo scritto quella cosa?"</li>
+</ul>
+<ul><li><strong>Versionati (Git)</strong>: Ogni modifica è tracciata. Cancelli qualcosa per sbaglio? `git checkout`. Vuoi vedere cosa facevi 6 mesi fa? `git log`. Cambi idea su una decisione? `git revert`. È una time machine per i tuoi pensieri.</li>
+</ul>
+<ul><li><strong>Sincronizzati (Git)</strong>: Push su GitHub, pull dal laptop, dal server, dal telefono (tramite bot). Funziona ovunque. Niente cloud proprietario, niente "devi pagare per avere sync". Git è il sync.</li>
+</ul>
+<strong>Boot</strong>: File di inizializzazione. Claude li legge all'avvio di ogni sessione per sapere chi sono, come lavoro, quali sono le regole operative. È il mio "system prompt" personale.
+
+<strong>Log</strong> e <strong>Diary</strong>: Separati perché hanno audience diverse. Il log è professionale (progetti, clienti, sviluppi tecnici). Il diary è personale (eventi, viaggi, riflessioni). Entrambi hanno formato flessibile: `YYYY-MM-DD-topic.md` per eventi specifici, o `YYYY-MM-gmail-log.md` per riepiloghi mensili auto-generati.
+
+<strong>Database</strong>: Obsidian-style. File markdown con frontmatter YAML che definisce proprietà. Wikilinks per creare relazioni tra entità. Niente database SQL, niente ORM. Solo file di testo con struttura.
+
+<strong>Todo</strong>: Task complessi diventano file dedicati con contesto, checklist, reminder dates. Claude controlla i TODO all'avvio e mi segnala quelli in scadenza.
+
+<strong>Sketch</strong>: La cartella più caotica. Idee buttate lì alle 2 di notte che probabilmente non diventeranno mai nulla. Ma almeno non le perdo.
+
+<strong>Tools</strong>: Documentazione operativa. Ogni sottocartella (`gmail/`, `wordpress/`, `telegram/`) ha istruzioni per le API, esempi di chiamate, script riutilizzabili.
+
+<p>---</p>
+
+<h2>Perché funziona</h2>
+
+<strong>Zero dipendenze complesse</strong>: Posso aprire il brain con qualsiasi editor di testo, su qualsiasi sistema operativo, su qualsiasi device. Non dipendo da server, da abbonamenti, da aziende che potrebbero chiudere tra 5 anni.
+
+<strong>Grep basta e avanza</strong>: Cerco "api cloudflare", trovo tutto in mezzo secondo. Cerco il nome di un cliente, vedo tutte le interazioni. Semplice, veloce, deterministico.
+
+<strong>Git come time machine</strong>: Ogni modifica è tracciata. Se cambio idea, `git revert`. Se voglio vedere cosa facevo 6 mesi fa, `git log`. Se cancello qualcosa per sbaglio, `git checkout`.
+
+<strong>Portabilità totale</strong>: Se domani Claude Code non esistesse più, il brain continuerebbe a funzionare. Sono file di testo. Posso usarli con qualsiasi tool, qualsiasi AI, qualsiasi script che scrivo io.
+
+<p>---</p>
+
+<h2>E le API?</h2>
+
+<p>Qui viene la parte interessante.</p>
+
+<p>Ho collegato il brain a Gmail. Claude scarica le email e genera automaticamente log professionali e diary personali. Ogni mese. Senza che io debba fare nulla.</p>
+
+<p>Ho collegato Telegram. Posso mandare messaggi al bot e creare sketch, aggiungere TODO, fare query sul brain. Dal telefono, in due secondi.</p>
+
+<p>Sto pianificando di integrare altri servizi. Ma la cosa importante non è _quanti_ servizi ho collegato. È che ho scelto di <strong>fidarmi</strong> di collegare questi servizi.</p>
+
+<p>Dare accesso alle mie email a un'AI. Dargli permessi di scrittura sul filesystem. Fargli eseguire comandi git automaticamente.</p>
+
+<p>Questa fiducia è il vero cambio di paradigma. Non è solo automazione. È delegare operatività reale a un sistema che lavora per me, mentre io faccio altro.</p>
+
+<p>---</p>
+
+<strong>Nella prossima parte</strong>: Come funziona concretamente. Esempi pratici di workflow, dalla ricezione email alla generazione automatica di documentazione.
+
+<p>---</p>
+
+<strong>Serie Brain</strong>:
+<ul><li><strong>Parte 1: Quando Notion diventa un problema</strong> (questo post)</li>
+<li>Parte 2: Come funziona - Esempi pratici (coming soon)</li>
+<li>Parte 3: Sviluppi futuri e conclusioni (coming soon)</li>
+</ul>
+    </div>
+</body>
+</html>
