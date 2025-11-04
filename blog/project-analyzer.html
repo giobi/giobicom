@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Come Mappo Automaticamente i Miei Progetti nel Brain - Giobi.com</title>
+    <meta name="description" content="Ho 20+ progetti attivi. Quando un cliente chiama dopo 6 mesi, non ricordo più che stack usa, che DB ha, chi sono i referenti. Soluzione? Un subagent che analizza repo + email + web e crea documentazione automatica.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #00ff88;
+            background: #0a0e27;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #0d1117;
+            padding: 40px;
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .header {
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header a {
+            color: #00ff88;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #00ff88;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #00ff88;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #00ff88;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #00cc77;
+            font-size: 1.2em;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #aaa;
+        }
+
+        strong {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        code {
+            background: #1a1f36;
+            color: #ff79c6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        pre {
+            background: #1a1f36;
+            border: 1px solid #00ff88;
+            border-left: 4px solid #00ff88;
+            padding: 15px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #f8f8f2;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            color: #aaa;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #00ff88;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #00cc77;
+        }
+
+        .back-link {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #00ff88;
+        }
+
+        .back-link a {
+            color: #00ff88;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html">← Torna alla home</a>
+        </div>
+
+        <article>
+            <h1>Come Mappo Automaticamente i Miei Progetti nel Brain</h1>
+            <div class="meta">
+                2025-11-04 • 8 min lettura
+            </div>
+
+            <h1>Come Mappo Automaticamente i Miei Progetti nel Brain</h1>
+
+<h2>Il Problema: La Memoria dei Progetti</h2>
+
+<p>
+Scenario tipico:
+</p>
+
+<p>
+Cliente: "Ciao! Vorremmo aggiungere una feature a ProjectFlow"
+</p>
+
+<p>
+Io: "...ProjectFlow? Aspetta... era quello in Laravel o React? E il database era MySQL o PostgreSQL? Chi era il referente tecnico?"
+</p>
+
+<strong>10-20 progetti attivi. 50+ progetti totali negli ultimi anni.</strong>
+
+<p>
+Quando passa tempo tra una manutenzione e l'altra, <strong>la memoria si sgretola</strong>.
+</p>
+
+<p>
+Nota mentale: "Devo documentare meglio." → Mai fatto.
+</p>
+
+<h2>Prima Soluzione: Documentazione Manuale</h2>
+
+<p>
+Provato a creare file README dettagliati in ogni repo.
+</p>
+
+<strong>Problemi</strong>:
+<li>Nessuno li aggiorna (me compreso)</li>
+<li>Info sparse: repo + email + appunti cartacei</li>
+<li>Contesto cliente separato dal contesto tecnico</li>
+<li>Quando serve, non ricordo dove ho scritto cosa</li>
+
+<strong>Risultato</strong>: README fantasma, documentazione obsoleta, ogni volta ricomincio da zero.
+
+<h2>La Soluzione: Project Analyzer</h2>
+
+<strong>Idea</strong>: Un sistema che analizza automaticamente progetti esistenti e crea documentazione strutturata nel brain.
+
+<strong>Input</strong>: Nome progetto (es: "projectflow") + repo GitHub + cliente
+
+<strong>Output</strong>: Due file markdown:
+<li><code>database/projects/projectflow.md</code> - Info tecnica progetto</li>
+<li><code>database/companies/acme-consulting.md</code> - Info cliente</li>
+
+<strong>Tempo</strong>: ~2 minuti (automatico).
+
+<strong>Mantenimento</strong>: Zero. Si rigenera quando serve.
+
+<h2>Come Funziona</h2>
+
+<h3>Step 1: Analisi Repository</h3>
+
+<p>
+Clone repo temporaneo e analisi struttura:
+</p>
+
+<pre><code class="language-bash">cd /tmp
+<p>
+git clone git@github.com:user/projectflow.git
+cd projectflow
+</p>
+
+<h1>Identifico stack</h1>
+<p>
+ls app/Models/     # Laravel
+ls src/            # React/Vue
+ls pages/          # Next.js
+</p>
+
+<h1>Cerco documentazione</h1>
+<p>
+cat README.md
+ls docs/
+</code></pre>
+</p>
+
+<strong>Cosa estraggo</strong>:
+<ul>
+<li>Stack tecnico (framework, linguaggio, DB)</li>
+<li>Entità database (models + migrations)</li>
+<li>Pattern architetturali interessanti</li>
+<li>Timeline sviluppo (date migrations + git history)</li>
+</ul>
+
+<h3>Step 2: Email Search</h3>
+
+<p>
+Cerco tutte le email relative al progetto:
+</p>
+
+<pre><code class="language-python">queries = [
+<p>
+    'projectflow',
+    'subject:projectflow',
+    'ACME Consulting'
+]
+</p>
+
+<h1>Recupero via Gmail API</h1>
+<p>
+for query in queries:
+    emails = gmail_api.search(query)
+</p>
+
+<h1>Analizzo:</h1>
+<h1>- Prima/ultima email → timeline collaborazione</h1>
+<h1>- Referenti più frequenti (from/to)</h1>
+<h1>- Feature requests, bug reports, fatture</h1>
+<p>
+</code></pre>
+</p>
+
+<strong>Cosa estraggo</strong>:
+<ul>
+<li>Timeline collaborazione (es: "2022-03 kickoff, 2023-06 feature X, 2025-11 ultimo contatto")</li>
+<li>Referenti principali (Mario Rossi, Laura Bianchi)</li>
+<li>Pattern comunicazione (tone, frequenza, urgenze)</li>
+</ul>
+
+<h3>Step 3: Web Research</h3>
+
+<p>
+Se c'è un cliente B2B, cerco info online:
+</p>
+
+<pre><code class="language-python">search_query = "ACME Consulting Milano software"
+
+<h1>Estraggo da risultati:</h1>
+<h1>- Ragione sociale completa</h1>
+<h1>- Sede + contatti</h1>
+<h1>- Settore / industry</h1>
+<h1>- LinkedIn</h1>
+<p>
+</code></pre>
+</p>
+
+<strong>Cosa estraggo</strong>:
+<ul>
+<li>Business info (cosa fa l'azienda)</li>
+<li>Dimensione, anno fondazione</li>
+<li>Website, LinkedIn</li>
+</ul>
+
+<h3>Step 4: Analisi Schema Database</h3>
+
+<p>
+Per progetti con database (Laravel, Rails, Django, etc.):
+</p>
+
+<pre><code class="language-bash"><h1>Cerco models</h1>
+<p>
+find app/Models -name "*.php"
+</p>
+
+<h1>Leggo migrations per schema</h1>
+<p>
+ls database/migrations/
+</p>
+
+<h1>Identifico:</h1>
+<h1>- Entità principali (User, Order, Invoice, etc.)</h1>
+<h1>- Relazioni (1:N, N:N, polymorphic)</h1>
+<h1>- Pattern interessanti (versioning, state machine, etc.)</h1>
+<p>
+</code></pre>
+</p>
+
+<strong>Esempio pattern identificato</strong> (versioning system):
+
+<pre><code class="language-php">// Document con revisioni parent-child
+<p>
+class Document extends Model {
+    public function parent() {
+        return $this->belongsTo(self::class, 'document_id');
+    }
+</p>
+
+<p>
+    public function revisions() {
+        return $this->hasMany(self::class, 'document_id');
+    }
+}
+</p>
+
+<p>
+// Codice documento: 2025-123-R2
+// (anno-id_originale-revisione)
+</code></pre>
+</p>
+
+<p>
+Questo è <strong>riutilizzabile</strong> in altri progetti → lo documento.
+</p>
+
+<h2>Output: File Markdown Strutturati</h2>
+
+<h3>File 1: <code>database/projects/projectflow.md</code></h3>
+
+<pre><code class="language-markdown">---
+<p>
+name: ProjectFlow
+client: ACME Consulting
+type: gestionale
+stack: Laravel, PHP, MySQL
+status: produzione
+repo: https://github.com/user/projectflow
+started: 2022-03
+last_updated: 2025-11
+---
+</p>
+
+<h1>ProjectFlow - Gestionale Progetti</h1>
+
+<strong>Cliente</strong>: [[database/companies/acme-consulting|ACME Consulting]]
+<strong>Repository</strong>: https://github.com/user/projectflow
+
+<h2>Overview</h2>
+
+<p>
+Sistema gestione progetti per ACME Consulting.
+</p>
+
+<p>
+Funzionalità:
+</p>
+<ul>
+<li>Gestione clienti e progetti</li>
+<li>Time tracking operatori</li>
+<li>Fatturazione automatica</li>
+<li>Dashboard manager/operatore</li>
+</ul>
+
+<h2>Stack Tecnico</h2>
+
+<strong>Backend</strong>: Laravel 10, PHP 8.2, MySQL
+<strong>Frontend</strong>: Livewire + Alpine.js
+<strong>Deployment</strong>: GitHub Actions → VPS
+
+<h2>Schema Database</h2>
+
+<h3>Entità Principali</h3>
+
+<li><strong>Client</strong> - Aziende clienti</li>
+<p>
+   - Relations: projects[], invoices[]
+</p>
+
+<li><strong>Project</strong> - Progetti</li>
+<p>
+   - client_id
+   - status: draft|active|completed|archived
+   - Relations: tasks[], timesheets[]
+</p>
+
+<li><strong>Task</strong> - Attività progetto</li>
+<p>
+   - project_id, user_id
+   - estimated_hours, actual_hours
+   - Relations: timesheets[]
+</p>
+
+<h3>Pattern Interessanti</h3>
+
+<strong>Timesheet Aggregation</strong>: Calcolo automatico ore da timesheet giornalieri.
+
+<strong>Invoice Generation</strong>: Da task completate → fattura draft.
+
+<h2>Timeline Sviluppo</h2>
+
+<ul>
+<li>2022-03: Kickoff progetto</li>
+<li>2022-06: Launch MVP (clienti + progetti)</li>
+<li>2023-01: Time tracking + fatturazione</li>
+<li>2023-06: Dashboard avanzate</li>
+<li>2025-11: Ultimo contatto (richiesta esportazione dati)</li>
+</ul>
+
+<h2>Status Attuale</h2>
+
+<strong>Produzione</strong>: Sistema stabile, ~50 utenti attivi.
+
+<strong>Prossime features</strong>: Integrazione contabilità esterna (richiesta 2025-11).
+<p>
+</code></pre>
+</p>
+
+<h3>File 2: <code>database/companies/acme-consulting.md</code></h3>
+
+<pre><code class="language-markdown">---
+<p>
+name: ACME Consulting
+full_name: ACME Consulting Srl
+founded: 2015
+industry: Consulenza IT
+location: Via Roma 123, 20100 Milano
+employees: 10-50
+relationship: cliente
+status: attivo
+website: https://acme-consulting.it
+---
+</p>
+
+<h1>ACME Consulting</h1>
+
+<strong>Settore</strong>: Consulenza IT e Digital Transformation
+<strong>Sede</strong>: Milano
+<strong>Dipendenti</strong>: ~30
+
+<h2>Persone di Riferimento</h2>
+
+<h3>Mario Rossi</h3>
+<strong>Ruolo</strong>: CTO
+<strong>Email</strong>: mario.rossi@acme-consulting.it
+<strong>Note</strong>: Referente tecnico principale
+
+<h3>Laura Bianchi</h3>
+<strong>Ruolo</strong>: Project Manager
+<strong>Email</strong>: laura.bianchi@acme-consulting.it
+<strong>Note</strong>: Coordinamento operativo
+
+<h2>Progetti con Noi</h2>
+
+<h3>ProjectFlow</h3>
+<strong>Tipo</strong>: Gestionale progetti custom
+<strong>Status</strong>: Produzione
+<strong>Durata</strong>: 3+ anni (2022-presente)
+
+<h2>Timeline Collaborazione</h2>
+
+<ul>
+<li>2022-03: Primo contatto, kickoff ProjectFlow</li>
+<li>2022-06: Go-live MVP</li>
+<li>2023-01: Feature time tracking</li>
+<li>2025-11: Richiesta integrazione contabilità</li>
+</ul>
+
+<h2>Relationship Status</h2>
+
+<strong>Tipo</strong>: Cliente fidelizzato
+<strong>Durata</strong>: 3+ anni
+<strong>Salute</strong>: ✅ Ottima - richieste periodiche, pagamenti regolari
+<strong>Potenziale</strong>: Alto - interesse per nuovi progetti
+<p>
+</code></pre>
+</p>
+
+<h2>Workflow Pratico</h2>
+
+<strong>Comando</strong>:
+<pre><code class="language-bash"><h1>Input minimo richiesto</h1>
+<p>
+analyze-project --name projectflow --repo user/projectflow --client "ACME Consulting"
+</code></pre>
+</p>
+
+<strong>Esecuzione</strong> (~2 minuti):
+<li>Clone repo in /tmp</li>
+<li>Analisi README + models + migrations</li>
+<li>Cerca 50+ email "projectflow" e "ACME"</li>
+<li>Web search "ACME Consulting Milano"</li>
+<li>Genera 2 file markdown</li>
+<li>Commit automatico nel brain</li>
+
+<strong>Output</strong>:
+<pre><code class="language-">✅ database/projects/projectflow.md (creato)
+<p>
+✅ database/companies/acme-consulting.md (creato)
+</p>
+
+<p>
+📊 Analisi completata:
+</p>
+<ul>
+<li>Stack: Laravel + MySQL</li>
+<li>Entità DB: 8 models principali</li>
+<li>Email trovate: 67</li>
+<li>Timeline: 2022-03 → 2025-11</li>
+<li>Referenti: Mario Rossi (CTO), Laura Bianchi (PM)</li>
+</ul>
+<p>
+</code></pre>
+</p>
+
+<h2>Valore Aggiunto</h2>
+
+<h3>Prima</h3>
+<ul>
+<li>Cliente chiama → "Aspetta, cerco appunti..."</li>
+<li>10-15 minuti per ricostruire contesto</li>
+<li>Rischio di info sbagliate/obsolete</li>
+<li>Ogni volta si ricomincia da zero</li>
+</ul>
+
+<h3>Dopo</h3>
+<ul>
+<li>Cliente chiama → <code>grep "projectflow" database/projects/</code></li>
+<li>30 secondi per avere tutto il contesto</li>
+<li>Info sempre aggiornate (rigenero quando serve)</li>
+<li><strong>Wikilinks</strong>: progetti → aziende → persone (navigabile)</li>
+</ul>
+
+<h3>Bonus: Pattern Riutilizzabili</h3>
+
+<p>
+Analizzando 20 progetti, identifico pattern ricorrenti:
+</p>
+
+<strong>Versioning documents</strong> (3 progetti):
+<pre><code class="language-">Document
+<p>
+  ├─ document_id (parent)
+  ├─ revision_number
+  └─ code: YYYY-ID-RN
+</code></pre>
+</p>
+
+<strong>Polymorphic tasks</strong> (5 progetti):
+<pre><code class="language-">Task
+<p>
+  ├─ taskable_id
+  └─ taskable_type (Project|Order|...)
+</code></pre>
+</p>
+
+<strong>Role-based dashboards</strong> (7 progetti):
+<pre><code class="language-">User
+<p>
+  ├─ type: admin|manager|operator
+  └─ Routes: /admin/, /manager/, /operator/
+</code></pre>
+</p>
+
+<p>
+Questi pattern diventano <strong>template riutilizzabili</strong> per nuovi progetti.
+</p>
+
+<h2>Limitazioni</h2>
+
+<strong>Non è magia</strong>:
+<ul>
+<li>Serve repo accessibile (GitHub/GitLab con SSH)</li>
+<li>Email devono avere keyword cercabili</li>
+<li>Web research funziona per aziende con presenza online</li>
+</ul>
+
+<strong>Non sostituisce</strong>:
+<ul>
+<li>Documentazione tecnica dettagliata (architecture docs, API specs)</li>
+<li>Knowledge domain-specific (business rules complesse)</li>
+<li>Comunicazione umana (call con cliente per capire esigenze)</li>
+</ul>
+
+<strong>È ottimo per</strong>:
+<ul>
+<li>Overview rapido progetto</li>
+<li>Ricostruzione contesto dopo mesi</li>
+<li>Onboarding nuovo developer</li>
+<li>Pattern discovery cross-project</li>
+</ul>
+
+<h2>Estensioni Future</h2>
+
+<strong>1. Git History Analysis</strong>:
+<ul>
+<li>Contributors principali</li>
+<li>Commit frequency (progetto attivo o dormiente?)</li>
+<li>Branching strategy</li>
+</ul>
+
+<strong>2. Dependency Check</strong>:
+<ul>
+<li>Versioni outdated (composer/npm)</li>
+<li>Security vulnerabilities</li>
+<li>License compatibility</li>
+</ul>
+
+<strong>3. Code Metrics</strong>:
+<ul>
+<li>LOC (lines of code)</li>
+<li>Cyclomatic complexity</li>
+<li>Test coverage</li>
+</ul>
+
+<strong>4. API Documentation</strong>:
+<ul>
+<li>Estrarre endpoints da routes</li>
+<li>Generare Swagger/OpenAPI draft</li>
+</ul>
+
+<strong>5. Compare Projects</strong>:
+<ul>
+<li>"Quali progetti usano pattern X?"</li>
+<li>"Stack più comune negli ultimi 2 anni?"</li>
+<li>"Cliente medio: quante feature/anno?"</li>
+</ul>
+
+<h2>Conclusioni</h2>
+
+<strong>Il brain non è solo per nuove conoscenze.</strong>
+
+<p>
+È anche per <strong>ricostruire ciò che già sapevi ma hai dimenticato</strong>.
+</p>
+
+<p>
+Il <strong>Project Analyzer</strong> fa esattamente questo:
+</p>
+
+<li>Analizza automaticamente progetti esistenti</li>
+<li>Estrae info tecniche + business + relazionali</li>
+<li>Crea documentazione strutturata e navigabile</li>
+<li>Identifica pattern riutilizzabili</li>
+
+<strong>Risultato</strong>: Quando un cliente chiama dopo 6 mesi, <strong>so subito di cosa stiamo parlando</strong>.
+
+<p>
+Zero ansia. Zero tempo perso. Tutto già lì.
+</p>
+
+<p>
+---
+</p>
+
+<strong>Prossimi post</strong>:
+<ul>
+<li>Come uso il brain per generare preventivi (da progetti simili)</li>
+<li>Pattern riutilizzabili: la mia libreria di "LEGO code"</li>
+<li>Email → Action Items → TODO automatici (integrazione read.ai)</li>
+</ul>
+
+<strong>Repo template</strong> (coming soon): https://github.com/giobi/brain-template
+
+<p>
+---
+</p>
+
+<strong>Note</strong>: Il Project Analyzer è parte del mio sistema "Brain" (knowledge base personale). I post precedenti spiegano come funziona il brain:
+<ul>
+<li>Parte 1: Il problema e la soluzione</li>
+<li>Parte 2: Workflow pratici</li>
+</ul>
+<li>Parte 3: Sviluppi futuri</li>
+        </article>
+
+        <div class="back-link">
+            <a href="index.html">← Torna al blog</a>
+        </div>
+    </div>
+</body>
+</html>

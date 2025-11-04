@@ -4,6 +4,25 @@ Articoli tecnici su sviluppo, automazione e knowledge management.
 
 ---
 
+## [Come Mappo Automaticamente i Miei Progetti nel Brain](project-analyzer.md)
+
+**Data**: 4 novembre 2025 • **Lettura**: 8 min
+
+Ho 20+ progetti attivi. Quando un cliente chiama dopo 6 mesi, non ricordo più che stack usa, che DB ha, chi sono i referenti. Soluzione? Un subagent che analizza repo + email + web e crea documentazione automatica.
+
+**Cosa copre**:
+- Analisi automatica repository (models, migrations, patterns)
+- Email search per timeline e referenti
+- Web research su aziende clienti
+- Generazione file markdown strutturati
+- Pattern riutilizzabili identificati cross-project
+
+**Output**: `database/projects/{nome}.md` + `database/companies/{cliente}.md`
+
+**Temi**: automation, knowledge management, Laravel, pattern discovery, subagent
+
+---
+
 ## Serie Brain - Knowledge Management System (2025-11)
 
 Un sistema personale per non impazzire con 10 progetti, 50 clienti, e idee che arrivano alle 2 di notte.
